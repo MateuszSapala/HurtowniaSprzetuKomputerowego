@@ -1,4 +1,5 @@
 ﻿using HurtowniaSprzętuKomputerowego.common;
+using HurtowniaSprzętuKomputerowego.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,25 +22,38 @@ namespace HurtowniaSprzętuKomputerowego
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonZaloguj_Click(object sender, EventArgs e)
         {
-            /*using (SqlConnection connection = DbConnection.getConnection())
-            {
-                SqlCommand command = new SqlCommand("SELECT * FROM Hurtownia.dbo.pracownik;", connection);
-                command.Connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    MessageBox.Show(reader.GetInt32(0) + " " + reader.GetString(1));
-                }
-            }*/
-            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter(DbConnection.Table.pracownik))
+            string login = textBoxLogin.Text;
+            string haslo = textBoxHaslo.Text;
+
+            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM Hurtownia.dbo.pracownik WHERE login='" + login + "' AND haslo='" + haslo + "';"))
             {
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
-                foreach(DataRow row in dataTable.Rows)
+                foreach (DataRow row in dataTable.Rows)
                 {
-                    MessageBox.Show(row.Field<int>("id") + " " + row.Field<string>("imie") + " " + row.Field<string>("nazwisko") + " " + row.Field<string>("adres"));
+                    Pracownik pracownik = new Pracownik(row.Field<int>("id"), row.Field<string>("imie"), row.Field<string>("nazwisko"), row.Field<string>("adres"), row.Field<string>("login"), row.Field<string>("haslo"));
+                    FormPracownik formPracownik = new FormPracownik(pracownik);
+                    formPracownik.FormClosed += (s, args) => Close();
+                    formPracownik.Show();
+                    Hide();
+                    return;
+                }
+            }
+
+            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM Hurtownia.dbo.klient WHERE login='" + login + "' AND haslo='" + haslo + "';"))
+            {
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    Klient klient = new Klient(row.Field<int>("id"), row.Field<string>("imie"), row.Field<string>("nazwisko"), row.Field<string>("adres"), row.Field<string>("login"), row.Field<string>("haslo"));
+                    FormKlient formKlient = new FormKlient(klient);
+                    formKlient.FormClosed += (s, args) => Close();
+                    formKlient.Show();
+                    Hide();
+                    return;
                 }
             }
         }

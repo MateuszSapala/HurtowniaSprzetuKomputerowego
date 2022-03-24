@@ -28,22 +28,23 @@ CREATE TABLE Hurtownia.dbo.klient(
 	id INT IDENTITY(1,1) PRIMARY KEY,
 	imie VARCHAR(50) NOT NULL,
 	nazwisko VARCHAR(50) NOT NULL,
-	adres VARCHAR(50) NOT NULL
+	adres VARCHAR(50) NOT NULL,
+	login VARCHAR(50) NOT NULL,
+	haslo VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE Hurtownia.dbo.sprzedaz(
 	id INT IDENTITY(1,1) PRIMARY KEY,
 	klient_id INT FOREIGN KEY REFERENCES Hurtownia.dbo.klient(id),
-	nazwa_statusu VARCHAR(50) NOT NULL,
+	status INT NOT NULL CHECK (status BETWEEN 0 AND 3),
 	suma MONEY NOT NULL,
-	data_sprzedazy DATE NOT NULL
+	data_sprzedazy DATETIME NOT NULL
 );
 
 CREATE TABLE Hurtownia.dbo.pozycja_sprzedazy(
 	id INT IDENTITY(1,1) PRIMARY KEY,
 	sprzedaz_id INT FOREIGN KEY REFERENCES Hurtownia.dbo.sprzedaz(id),
 	produkt_id INT FOREIGN KEY REFERENCES Hurtownia.dbo.produkt(id),
-	nazwa_sprzetu VARCHAR(50) NOT NULL,
 	zamowiona_ilosc INT NOT NULL,
 	wartosc MONEY NOT NULL,
 );
@@ -52,11 +53,14 @@ CREATE TABLE Hurtownia.dbo.pracownik(
 	id INT IDENTITY(1,1) PRIMARY KEY,
 	imie VARCHAR(50) NOT NULL,
 	nazwisko VARCHAR(50) NOT NULL,
-	adres VARCHAR(50) NOT NULL
+	adres VARCHAR(50) NOT NULL,
+	login VARCHAR(50) NOT NULL,
+	haslo VARCHAR(50) NOT NULL
 );
 
 --Dodanie przyk³adowych danych
-INSERT INTO Hurtownia.dbo.pracownik (imie, nazwisko, adres) VALUES ('Mateusz', 'Sapa³a', 'Adres');
+INSERT INTO Hurtownia.dbo.pracownik (imie, nazwisko, adres, login, haslo) VALUES ('Mateusz', 'Sapa³a', 'Adres', 'admin', 'pass');
+INSERT INTO Hurtownia.dbo.klient (imie, nazwisko, adres, login, haslo) VALUES ('Jan', 'Nowak', 'Adres', 'user', 'pass');
 
 --Pobieranie danych
 --SELECT * FROM Hurtownia.dbo.pozycja_sprzedazy;
