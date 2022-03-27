@@ -36,6 +36,7 @@ namespace HurtowniaSprzętuKomputerowego
                     Pracownik pracownik = new Pracownik(row.Field<int>("id"), row.Field<string>("imie"), row.Field<string>("nazwisko"), row.Field<string>("adres"), row.Field<string>("login"), row.Field<string>("haslo"));
                     FormPracownik formPracownik = new FormPracownik(pracownik);
                     formPracownik.FormClosed += (s, args) => Close();
+                    formPracownik.WindowState = FormWindowState.Maximized;
                     formPracownik.Show();
                     Hide();
                     return;
@@ -51,6 +52,7 @@ namespace HurtowniaSprzętuKomputerowego
                     Klient klient = new Klient(row.Field<int>("id"), row.Field<string>("imie"), row.Field<string>("nazwisko"), row.Field<string>("adres"), row.Field<string>("login"), row.Field<string>("haslo"));
                     FormKlient formKlient = new FormKlient(klient);
                     formKlient.FormClosed += (s, args) => Close();
+                    formKlient.WindowState = FormWindowState.Maximized;
                     formKlient.Show();
                     Hide();
                     return;

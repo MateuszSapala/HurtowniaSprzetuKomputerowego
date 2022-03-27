@@ -13,7 +13,8 @@ DROP TABLE IF EXISTS Hurtownia.dbo.pracownik;
 --Dodanie tabel
 CREATE TABLE Hurtownia.dbo.dostawca(
 	id INT IDENTITY(1,1) PRIMARY KEY,
-	nazwa VARCHAR(50) NOT NULL
+	nazwa VARCHAR(50) NOT NULL,
+	informacje_dodatkowe VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE Hurtownia.dbo.produkt(
