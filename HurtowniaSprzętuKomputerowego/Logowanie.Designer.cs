@@ -89,6 +89,7 @@ namespace HurtowniaSprzętuKomputerowego
             this.Controls.Add(this.textBoxLogin);
             this.Controls.Add(this.labelLogin);
             this.Controls.Add(this.buttonZaloguj);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Logowanie";
             this.Text = "Logowanie";
             this.ResumeLayout(false);
