@@ -1,4 +1,5 @@
-﻿using HurtowniaSprzętuKomputerowego.model;
+﻿using HurtowniaSprzętuKomputerowego.db;
+using HurtowniaSprzętuKomputerowego.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,13 @@ namespace HurtowniaSprzętuKomputerowego
         {
             zalogowanyPracownik = pracownik;
             InitializeComponent();
+        }
+
+        private void buttonDostawcyDodajDostawce_Click(object sender, EventArgs e)
+        {
+            string nazwaDostawcy = textBoxDostawcyNazwaDostawcy.Text;
+            string informacjeDodatkowe = textBoxDostawcyInformacjeDodatkowe.Text;
+            PracownikRepository.DodajDostawce(nazwaDostawcy, informacjeDodatkowe);
         }
     }
 }

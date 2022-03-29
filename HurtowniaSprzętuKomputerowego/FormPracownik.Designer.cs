@@ -30,129 +30,118 @@ namespace HurtowniaSprzętuKomputerowego
         private void InitializeComponent()
         {
             this.tabPageSprzedaze = new System.Windows.Forms.TabPage();
-            this.button7 = new System.Windows.Forms.Button();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.dataGridView6 = new System.Windows.Forms.DataGridView();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.dataGridView7 = new System.Windows.Forms.DataGridView();
+            this.buttonSprzedazeSzukaj = new System.Windows.Forms.Button();
+            this.textBoxSprzedarzeFiltr = new System.Windows.Forms.TextBox();
+            this.labelSprzedarzeFiltry = new System.Windows.Forms.Label();
+            this.splitContainerSprzedaze = new System.Windows.Forms.SplitContainer();
+            this.groupBoxSprzedazeSprzedaze = new System.Windows.Forms.GroupBox();
+            this.dataGridViewSprzedazeSprzedaze = new System.Windows.Forms.DataGridView();
+            this.groupBoxSprzedazeKupioneProdukty = new System.Windows.Forms.GroupBox();
+            this.dataGridViewSprzedazeKupioneProdukty = new System.Windows.Forms.DataGridView();
             this.tabPageKlient = new System.Windows.Forms.TabPage();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.splitContainerKlienci = new System.Windows.Forms.SplitContainer();
+            this.groupBoxKlienciListaKlientow = new System.Windows.Forms.GroupBox();
+            this.dataGridViewKlienciListaKlientow = new System.Windows.Forms.DataGridView();
+            this.groupBoxKlienciKupnaKlienta = new System.Windows.Forms.GroupBox();
+            this.dataGridViewKlienciKupnaKlienta = new System.Windows.Forms.DataGridView();
             this.tabPageProdukty = new System.Windows.Forms.TabPage();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.splitContainerProdukty = new System.Windows.Forms.SplitContainer();
             this.groupBoxProduktySzczegolyProduktu = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.numericUpDownProduktyCenaJednostkowa = new System.Windows.Forms.NumericUpDown();
+            this.textBoxProduktyInformacjeDodatkowe = new System.Windows.Forms.TextBox();
+            this.labelProduktyInformacjeDodatkowe = new System.Windows.Forms.Label();
+            this.labelProduktyCenaJednostkowa = new System.Windows.Forms.Label();
+            this.comboBoxProduktyDostawca = new System.Windows.Forms.ComboBox();
+            this.buttonProduktyUsun = new System.Windows.Forms.Button();
+            this.buttonProduktyEdytuj = new System.Windows.Forms.Button();
+            this.labelProduktyDostawca = new System.Windows.Forms.Label();
+            this.buttonProduktyDodaj = new System.Windows.Forms.Button();
+            this.textBoxProduktyNazwaProduktu = new System.Windows.Forms.TextBox();
+            this.labelProduktyNazwaProduktu = new System.Windows.Forms.Label();
+            this.groupBoxProduktyListaProduktow = new System.Windows.Forms.GroupBox();
+            this.dataGridViewProduktyListaProduktow = new System.Windows.Forms.DataGridView();
             this.tabPageDostawcy = new System.Windows.Forms.TabPage();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.splitContainerDostawcy = new System.Windows.Forms.SplitContainer();
             this.groupBoxProduktyOferowanePrzezDostawce = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewDostawcyProduktyOferowanePrzezDostawce = new System.Windows.Forms.DataGridView();
             this.groupBoxDostawcaSzczegoly = new System.Windows.Forms.GroupBox();
-            this.buttonDostawcyUsun = new System.Windows.Forms.Button();
-            this.buttonDostawcyEdytuj = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.buttonDostawcyUsunDostawce = new System.Windows.Forms.Button();
+            this.buttonDostawcyEdytujDostawce = new System.Windows.Forms.Button();
+            this.textBoxDostawcyInformacjeDodatkowe = new System.Windows.Forms.TextBox();
             this.labelDostawcyInformacjeDodatkowe = new System.Windows.Forms.Label();
             this.buttonDostawcyDodajDostawce = new System.Windows.Forms.Button();
             this.textBoxDostawcyNazwaDostawcy = new System.Windows.Forms.TextBox();
             this.labelDostawcyNazwaDostawcy = new System.Windows.Forms.Label();
             this.groupBoxDostawcyListaDostawcow = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewDostawcyListaDostawcow = new System.Windows.Forms.DataGridView();
             this.tabControlPracownik = new System.Windows.Forms.TabControl();
             this.tabPageInformacje = new System.Windows.Forms.TabPage();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
+            this.groupBoxInformacjeTwojeDane = new System.Windows.Forms.GroupBox();
+            this.labelInformacjeAdres = new System.Windows.Forms.Label();
+            this.labelInformacjeHaslo = new System.Windows.Forms.Label();
+            this.labelinformacjeLogin = new System.Windows.Forms.Label();
+            this.textBoxInformacjeHaslo = new System.Windows.Forms.TextBox();
+            this.textBoxInformacjeLogin = new System.Windows.Forms.TextBox();
+            this.textBoxInformacjeAdres = new System.Windows.Forms.TextBox();
+            this.textBoxInformacjeNazwisko = new System.Windows.Forms.TextBox();
+            this.buttonInformacjeZapisz = new System.Windows.Forms.Button();
+            this.buttonInformacjeAnuluj = new System.Windows.Forms.Button();
+            this.labelInformacjeNazwisko = new System.Windows.Forms.Label();
+            this.buttonInformacjeEdytuj = new System.Windows.Forms.Button();
+            this.textBoxInformacjeImie = new System.Windows.Forms.TextBox();
+            this.labelInformacjeImie = new System.Windows.Forms.Label();
+            this.buttonKlienciSzukaj = new System.Windows.Forms.Button();
+            this.textBoxKlienciFiltr = new System.Windows.Forms.TextBox();
+            this.labelKlienciFiltry = new System.Windows.Forms.Label();
             this.tabPageSprzedaze.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
-            this.splitContainer4.Panel1.SuspendLayout();
-            this.splitContainer4.Panel2.SuspendLayout();
-            this.splitContainer4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
-            this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerSprzedaze)).BeginInit();
+            this.splitContainerSprzedaze.Panel1.SuspendLayout();
+            this.splitContainerSprzedaze.Panel2.SuspendLayout();
+            this.splitContainerSprzedaze.SuspendLayout();
+            this.groupBoxSprzedazeSprzedaze.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSprzedazeSprzedaze)).BeginInit();
+            this.groupBoxSprzedazeKupioneProdukty.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSprzedazeKupioneProdukty)).BeginInit();
             this.tabPageKlient.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
-            this.splitContainer3.Panel1.SuspendLayout();
-            this.splitContainer3.Panel2.SuspendLayout();
-            this.splitContainer3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerKlienci)).BeginInit();
+            this.splitContainerKlienci.Panel1.SuspendLayout();
+            this.splitContainerKlienci.Panel2.SuspendLayout();
+            this.splitContainerKlienci.SuspendLayout();
+            this.groupBoxKlienciListaKlientow.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKlienciListaKlientow)).BeginInit();
+            this.groupBoxKlienciKupnaKlienta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKlienciKupnaKlienta)).BeginInit();
             this.tabPageProdukty.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerProdukty)).BeginInit();
+            this.splitContainerProdukty.Panel1.SuspendLayout();
+            this.splitContainerProdukty.Panel2.SuspendLayout();
+            this.splitContainerProdukty.SuspendLayout();
             this.groupBoxProduktySzczegolyProduktu.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownProduktyCenaJednostkowa)).BeginInit();
+            this.groupBoxProduktyListaProduktow.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduktyListaProduktow)).BeginInit();
             this.tabPageDostawcy.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerDostawcy)).BeginInit();
+            this.splitContainerDostawcy.Panel1.SuspendLayout();
+            this.splitContainerDostawcy.Panel2.SuspendLayout();
+            this.splitContainerDostawcy.SuspendLayout();
             this.groupBoxProduktyOferowanePrzezDostawce.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDostawcyProduktyOferowanePrzezDostawce)).BeginInit();
             this.groupBoxDostawcaSzczegoly.SuspendLayout();
             this.groupBoxDostawcyListaDostawcow.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDostawcyListaDostawcow)).BeginInit();
             this.tabControlPracownik.SuspendLayout();
             this.tabPageInformacje.SuspendLayout();
-            this.groupBox6.SuspendLayout();
+            this.groupBoxInformacjeTwojeDane.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPageSprzedaze
             // 
             this.tabPageSprzedaze.BackColor = System.Drawing.Color.Gainsboro;
-            this.tabPageSprzedaze.Controls.Add(this.button7);
-            this.tabPageSprzedaze.Controls.Add(this.textBox10);
-            this.tabPageSprzedaze.Controls.Add(this.label10);
-            this.tabPageSprzedaze.Controls.Add(this.splitContainer4);
+            this.tabPageSprzedaze.Controls.Add(this.buttonSprzedazeSzukaj);
+            this.tabPageSprzedaze.Controls.Add(this.textBoxSprzedarzeFiltr);
+            this.tabPageSprzedaze.Controls.Add(this.labelSprzedarzeFiltry);
+            this.tabPageSprzedaze.Controls.Add(this.splitContainerSprzedaze);
             this.tabPageSprzedaze.Location = new System.Drawing.Point(4, 34);
             this.tabPageSprzedaze.Name = "tabPageSprzedaze";
             this.tabPageSprzedaze.Padding = new System.Windows.Forms.Padding(3);
@@ -160,93 +149,96 @@ namespace HurtowniaSprzętuKomputerowego
             this.tabPageSprzedaze.TabIndex = 7;
             this.tabPageSprzedaze.Text = "Sprzedaże";
             // 
-            // button7
+            // buttonSprzedazeSzukaj
             // 
-            this.button7.Location = new System.Drawing.Point(388, 9);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(80, 40);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "Szukaj";
-            this.button7.UseVisualStyleBackColor = true;
+            this.buttonSprzedazeSzukaj.Location = new System.Drawing.Point(386, 9);
+            this.buttonSprzedazeSzukaj.Name = "buttonSprzedazeSzukaj";
+            this.buttonSprzedazeSzukaj.Size = new System.Drawing.Size(80, 40);
+            this.buttonSprzedazeSzukaj.TabIndex = 7;
+            this.buttonSprzedazeSzukaj.Text = "Szukaj";
+            this.buttonSprzedazeSzukaj.UseVisualStyleBackColor = true;
             // 
-            // textBox10
+            // textBoxSprzedarzeFiltr
             // 
-            this.textBox10.Location = new System.Drawing.Point(83, 16);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(299, 29);
-            this.textBox10.TabIndex = 6;
+            this.textBoxSprzedarzeFiltr.Location = new System.Drawing.Point(81, 16);
+            this.textBoxSprzedarzeFiltr.Name = "textBoxSprzedarzeFiltr";
+            this.textBoxSprzedarzeFiltr.Size = new System.Drawing.Size(299, 29);
+            this.textBoxSprzedarzeFiltr.TabIndex = 6;
             // 
-            // label10
+            // labelSprzedarzeFiltry
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(29, 19);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(48, 21);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "Filtry:";
+            this.labelSprzedarzeFiltry.AutoSize = true;
+            this.labelSprzedarzeFiltry.Location = new System.Drawing.Point(27, 19);
+            this.labelSprzedarzeFiltry.Name = "labelSprzedarzeFiltry";
+            this.labelSprzedarzeFiltry.Size = new System.Drawing.Size(48, 21);
+            this.labelSprzedarzeFiltry.TabIndex = 5;
+            this.labelSprzedarzeFiltry.Text = "Filtry:";
             // 
-            // splitContainer4
+            // splitContainerSprzedaze
             // 
-            this.splitContainer4.Cursor = System.Windows.Forms.Cursors.VSplit;
-            this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitContainer4.Location = new System.Drawing.Point(3, 60);
-            this.splitContainer4.Name = "splitContainer4";
+            this.splitContainerSprzedaze.Cursor = System.Windows.Forms.Cursors.VSplit;
+            this.splitContainerSprzedaze.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.splitContainerSprzedaze.Location = new System.Drawing.Point(3, 60);
+            this.splitContainerSprzedaze.Name = "splitContainerSprzedaze";
             // 
-            // splitContainer4.Panel1
+            // splitContainerSprzedaze.Panel1
             // 
-            this.splitContainer4.Panel1.Controls.Add(this.groupBox5);
+            this.splitContainerSprzedaze.Panel1.Controls.Add(this.groupBoxSprzedazeSprzedaze);
             // 
-            // splitContainer4.Panel2
+            // splitContainerSprzedaze.Panel2
             // 
-            this.splitContainer4.Panel2.Controls.Add(this.groupBox7);
-            this.splitContainer4.Size = new System.Drawing.Size(986, 499);
-            this.splitContainer4.SplitterDistance = 486;
-            this.splitContainer4.TabIndex = 4;
+            this.splitContainerSprzedaze.Panel2.Controls.Add(this.groupBoxSprzedazeKupioneProdukty);
+            this.splitContainerSprzedaze.Size = new System.Drawing.Size(986, 499);
+            this.splitContainerSprzedaze.SplitterDistance = 486;
+            this.splitContainerSprzedaze.TabIndex = 4;
             // 
-            // groupBox5
+            // groupBoxSprzedazeSprzedaze
             // 
-            this.groupBox5.Controls.Add(this.dataGridView6);
-            this.groupBox5.Location = new System.Drawing.Point(18, 15);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(450, 467);
-            this.groupBox5.TabIndex = 5;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Sprzedaże";
+            this.groupBoxSprzedazeSprzedaze.Controls.Add(this.dataGridViewSprzedazeSprzedaze);
+            this.groupBoxSprzedazeSprzedaze.Location = new System.Drawing.Point(18, 15);
+            this.groupBoxSprzedazeSprzedaze.Name = "groupBoxSprzedazeSprzedaze";
+            this.groupBoxSprzedazeSprzedaze.Size = new System.Drawing.Size(450, 467);
+            this.groupBoxSprzedazeSprzedaze.TabIndex = 5;
+            this.groupBoxSprzedazeSprzedaze.TabStop = false;
+            this.groupBoxSprzedazeSprzedaze.Text = "Sprzedaże";
             // 
-            // dataGridView6
+            // dataGridViewSprzedazeSprzedaze
             // 
-            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView6.Location = new System.Drawing.Point(3, 25);
-            this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.RowTemplate.Height = 25;
-            this.dataGridView6.Size = new System.Drawing.Size(444, 439);
-            this.dataGridView6.TabIndex = 0;
+            this.dataGridViewSprzedazeSprzedaze.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSprzedazeSprzedaze.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewSprzedazeSprzedaze.Location = new System.Drawing.Point(3, 25);
+            this.dataGridViewSprzedazeSprzedaze.Name = "dataGridViewSprzedazeSprzedaze";
+            this.dataGridViewSprzedazeSprzedaze.RowTemplate.Height = 25;
+            this.dataGridViewSprzedazeSprzedaze.Size = new System.Drawing.Size(444, 439);
+            this.dataGridViewSprzedazeSprzedaze.TabIndex = 0;
             // 
-            // groupBox7
+            // groupBoxSprzedazeKupioneProdukty
             // 
-            this.groupBox7.Controls.Add(this.dataGridView7);
-            this.groupBox7.Location = new System.Drawing.Point(25, 15);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(450, 464);
-            this.groupBox7.TabIndex = 0;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Kupione produkty";
+            this.groupBoxSprzedazeKupioneProdukty.Controls.Add(this.dataGridViewSprzedazeKupioneProdukty);
+            this.groupBoxSprzedazeKupioneProdukty.Location = new System.Drawing.Point(25, 15);
+            this.groupBoxSprzedazeKupioneProdukty.Name = "groupBoxSprzedazeKupioneProdukty";
+            this.groupBoxSprzedazeKupioneProdukty.Size = new System.Drawing.Size(450, 467);
+            this.groupBoxSprzedazeKupioneProdukty.TabIndex = 0;
+            this.groupBoxSprzedazeKupioneProdukty.TabStop = false;
+            this.groupBoxSprzedazeKupioneProdukty.Text = "Kupione produkty";
             // 
-            // dataGridView7
+            // dataGridViewSprzedazeKupioneProdukty
             // 
-            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView7.Location = new System.Drawing.Point(3, 25);
-            this.dataGridView7.Name = "dataGridView7";
-            this.dataGridView7.RowTemplate.Height = 25;
-            this.dataGridView7.Size = new System.Drawing.Size(444, 436);
-            this.dataGridView7.TabIndex = 1;
+            this.dataGridViewSprzedazeKupioneProdukty.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSprzedazeKupioneProdukty.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewSprzedazeKupioneProdukty.Location = new System.Drawing.Point(3, 25);
+            this.dataGridViewSprzedazeKupioneProdukty.Name = "dataGridViewSprzedazeKupioneProdukty";
+            this.dataGridViewSprzedazeKupioneProdukty.RowTemplate.Height = 25;
+            this.dataGridViewSprzedazeKupioneProdukty.Size = new System.Drawing.Size(444, 439);
+            this.dataGridViewSprzedazeKupioneProdukty.TabIndex = 1;
             // 
             // tabPageKlient
             // 
             this.tabPageKlient.BackColor = System.Drawing.Color.Gainsboro;
-            this.tabPageKlient.Controls.Add(this.splitContainer3);
+            this.tabPageKlient.Controls.Add(this.buttonKlienciSzukaj);
+            this.tabPageKlient.Controls.Add(this.textBoxKlienciFiltr);
+            this.tabPageKlient.Controls.Add(this.labelKlienciFiltry);
+            this.tabPageKlient.Controls.Add(this.splitContainerKlienci);
             this.tabPageKlient.Location = new System.Drawing.Point(4, 34);
             this.tabPageKlient.Name = "tabPageKlient";
             this.tabPageKlient.Padding = new System.Windows.Forms.Padding(3);
@@ -254,200 +246,68 @@ namespace HurtowniaSprzętuKomputerowego
             this.tabPageKlient.TabIndex = 6;
             this.tabPageKlient.Text = "Klienci";
             // 
-            // splitContainer3
+            // splitContainerKlienci
             // 
-            this.splitContainer3.Cursor = System.Windows.Forms.Cursors.VSplit;
-            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer3.Location = new System.Drawing.Point(3, 3);
-            this.splitContainer3.Name = "splitContainer3";
+            this.splitContainerKlienci.Cursor = System.Windows.Forms.Cursors.VSplit;
+            this.splitContainerKlienci.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.splitContainerKlienci.Location = new System.Drawing.Point(3, 60);
+            this.splitContainerKlienci.Name = "splitContainerKlienci";
             // 
-            // splitContainer3.Panel1
+            // splitContainerKlienci.Panel1
             // 
-            this.splitContainer3.Panel1.Controls.Add(this.groupBox1);
-            this.splitContainer3.Panel1.Controls.Add(this.groupBox2);
+            this.splitContainerKlienci.Panel1.Controls.Add(this.groupBoxKlienciListaKlientow);
             // 
-            // splitContainer3.Panel2
+            // splitContainerKlienci.Panel2
             // 
-            this.splitContainer3.Panel2.Controls.Add(this.groupBox4);
-            this.splitContainer3.Size = new System.Drawing.Size(986, 556);
-            this.splitContainer3.SplitterDistance = 486;
-            this.splitContainer3.TabIndex = 4;
+            this.splitContainerKlienci.Panel2.Controls.Add(this.groupBoxKlienciKupnaKlienta);
+            this.splitContainerKlienci.Size = new System.Drawing.Size(986, 499);
+            this.splitContainerKlienci.SplitterDistance = 486;
+            this.splitContainerKlienci.TabIndex = 4;
             // 
-            // groupBox1
+            // groupBoxKlienciListaKlientow
             // 
-            this.groupBox1.Controls.Add(this.dataGridView3);
-            this.groupBox1.Location = new System.Drawing.Point(18, 335);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(450, 197);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Kupna klienta";
+            this.groupBoxKlienciListaKlientow.Controls.Add(this.dataGridViewKlienciListaKlientow);
+            this.groupBoxKlienciListaKlientow.Location = new System.Drawing.Point(18, 15);
+            this.groupBoxKlienciListaKlientow.Name = "groupBoxKlienciListaKlientow";
+            this.groupBoxKlienciListaKlientow.Size = new System.Drawing.Size(450, 467);
+            this.groupBoxKlienciListaKlientow.TabIndex = 5;
+            this.groupBoxKlienciListaKlientow.TabStop = false;
+            this.groupBoxKlienciListaKlientow.Text = "Lista klientów";
             // 
-            // dataGridView3
+            // dataGridViewKlienciListaKlientow
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView3.Location = new System.Drawing.Point(3, 25);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowTemplate.Height = 25;
-            this.dataGridView3.Size = new System.Drawing.Size(444, 169);
-            this.dataGridView3.TabIndex = 0;
+            this.dataGridViewKlienciListaKlientow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewKlienciListaKlientow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewKlienciListaKlientow.Location = new System.Drawing.Point(3, 25);
+            this.dataGridViewKlienciListaKlientow.Name = "dataGridViewKlienciListaKlientow";
+            this.dataGridViewKlienciListaKlientow.RowTemplate.Height = 25;
+            this.dataGridViewKlienciListaKlientow.Size = new System.Drawing.Size(444, 439);
+            this.dataGridViewKlienciListaKlientow.TabIndex = 0;
             // 
-            // groupBox2
+            // groupBoxKlienciKupnaKlienta
             // 
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.textBox9);
-            this.groupBox2.Controls.Add(this.textBox8);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.textBox7);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.button6);
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Location = new System.Drawing.Point(18, 15);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(450, 296);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Klient";
+            this.groupBoxKlienciKupnaKlienta.Controls.Add(this.dataGridViewKlienciKupnaKlienta);
+            this.groupBoxKlienciKupnaKlienta.Location = new System.Drawing.Point(25, 15);
+            this.groupBoxKlienciKupnaKlienta.Name = "groupBoxKlienciKupnaKlienta";
+            this.groupBoxKlienciKupnaKlienta.Size = new System.Drawing.Size(450, 467);
+            this.groupBoxKlienciKupnaKlienta.TabIndex = 0;
+            this.groupBoxKlienciKupnaKlienta.TabStop = false;
+            this.groupBoxKlienciKupnaKlienta.Text = "Kupna klienta";
             // 
-            // label9
+            // dataGridViewKlienciKupnaKlienta
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(9, 128);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(50, 21);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Adres";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(9, 217);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 21);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Hasło";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 173);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 21);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Login:";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(180, 214);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(246, 29);
-            this.textBox9.TabIndex = 12;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(180, 170);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(246, 29);
-            this.textBox8.TabIndex = 11;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(180, 125);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(246, 29);
-            this.textBox5.TabIndex = 10;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(180, 81);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(246, 29);
-            this.textBox7.TabIndex = 9;
-            // 
-            // button4
-            // 
-            this.button4.Enabled = false;
-            this.button4.Location = new System.Drawing.Point(346, 256);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(80, 40);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Usuń";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Enabled = false;
-            this.button5.Location = new System.Drawing.Point(180, 256);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(80, 40);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "Edytuj";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 84);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 21);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Nazwisko: ";
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(6, 256);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(80, 40);
-            this.button6.TabIndex = 0;
-            this.button6.Text = "Dodaj";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(180, 37);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(246, 29);
-            this.textBox6.TabIndex = 2;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 40);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 21);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Imię:";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.dataGridView5);
-            this.groupBox4.Location = new System.Drawing.Point(25, 15);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(450, 520);
-            this.groupBox4.TabIndex = 0;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Lista klientów";
-            // 
-            // dataGridView5
-            // 
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView5.Location = new System.Drawing.Point(3, 25);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.RowTemplate.Height = 25;
-            this.dataGridView5.Size = new System.Drawing.Size(444, 492);
-            this.dataGridView5.TabIndex = 1;
+            this.dataGridViewKlienciKupnaKlienta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewKlienciKupnaKlienta.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewKlienciKupnaKlienta.Location = new System.Drawing.Point(3, 25);
+            this.dataGridViewKlienciKupnaKlienta.Name = "dataGridViewKlienciKupnaKlienta";
+            this.dataGridViewKlienciKupnaKlienta.RowTemplate.Height = 25;
+            this.dataGridViewKlienciKupnaKlienta.Size = new System.Drawing.Size(444, 439);
+            this.dataGridViewKlienciKupnaKlienta.TabIndex = 1;
             // 
             // tabPageProdukty
             // 
             this.tabPageProdukty.BackColor = System.Drawing.Color.Gainsboro;
-            this.tabPageProdukty.Controls.Add(this.splitContainer2);
+            this.tabPageProdukty.Controls.Add(this.splitContainerProdukty);
             this.tabPageProdukty.Location = new System.Drawing.Point(4, 34);
             this.tabPageProdukty.Name = "tabPageProdukty";
             this.tabPageProdukty.Padding = new System.Windows.Forms.Padding(3);
@@ -455,37 +315,37 @@ namespace HurtowniaSprzętuKomputerowego
             this.tabPageProdukty.TabIndex = 5;
             this.tabPageProdukty.Text = "Produkty";
             // 
-            // splitContainer2
+            // splitContainerProdukty
             // 
-            this.splitContainer2.Cursor = System.Windows.Forms.Cursors.VSplit;
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(3, 3);
-            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainerProdukty.Cursor = System.Windows.Forms.Cursors.VSplit;
+            this.splitContainerProdukty.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerProdukty.Location = new System.Drawing.Point(3, 3);
+            this.splitContainerProdukty.Name = "splitContainerProdukty";
             // 
-            // splitContainer2.Panel1
+            // splitContainerProdukty.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.groupBoxProduktySzczegolyProduktu);
+            this.splitContainerProdukty.Panel1.Controls.Add(this.groupBoxProduktySzczegolyProduktu);
             // 
-            // splitContainer2.Panel2
+            // splitContainerProdukty.Panel2
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.groupBox3);
-            this.splitContainer2.Size = new System.Drawing.Size(986, 556);
-            this.splitContainer2.SplitterDistance = 486;
-            this.splitContainer2.TabIndex = 4;
+            this.splitContainerProdukty.Panel2.Controls.Add(this.groupBoxProduktyListaProduktow);
+            this.splitContainerProdukty.Size = new System.Drawing.Size(986, 556);
+            this.splitContainerProdukty.SplitterDistance = 486;
+            this.splitContainerProdukty.TabIndex = 4;
             // 
             // groupBoxProduktySzczegolyProduktu
             // 
-            this.groupBoxProduktySzczegolyProduktu.Controls.Add(this.textBox4);
-            this.groupBoxProduktySzczegolyProduktu.Controls.Add(this.label4);
-            this.groupBoxProduktySzczegolyProduktu.Controls.Add(this.textBox1);
-            this.groupBoxProduktySzczegolyProduktu.Controls.Add(this.label3);
-            this.groupBoxProduktySzczegolyProduktu.Controls.Add(this.comboBox1);
-            this.groupBoxProduktySzczegolyProduktu.Controls.Add(this.button1);
-            this.groupBoxProduktySzczegolyProduktu.Controls.Add(this.button2);
-            this.groupBoxProduktySzczegolyProduktu.Controls.Add(this.label1);
-            this.groupBoxProduktySzczegolyProduktu.Controls.Add(this.button3);
-            this.groupBoxProduktySzczegolyProduktu.Controls.Add(this.textBox3);
-            this.groupBoxProduktySzczegolyProduktu.Controls.Add(this.label2);
+            this.groupBoxProduktySzczegolyProduktu.Controls.Add(this.numericUpDownProduktyCenaJednostkowa);
+            this.groupBoxProduktySzczegolyProduktu.Controls.Add(this.textBoxProduktyInformacjeDodatkowe);
+            this.groupBoxProduktySzczegolyProduktu.Controls.Add(this.labelProduktyInformacjeDodatkowe);
+            this.groupBoxProduktySzczegolyProduktu.Controls.Add(this.labelProduktyCenaJednostkowa);
+            this.groupBoxProduktySzczegolyProduktu.Controls.Add(this.comboBoxProduktyDostawca);
+            this.groupBoxProduktySzczegolyProduktu.Controls.Add(this.buttonProduktyUsun);
+            this.groupBoxProduktySzczegolyProduktu.Controls.Add(this.buttonProduktyEdytuj);
+            this.groupBoxProduktySzczegolyProduktu.Controls.Add(this.labelProduktyDostawca);
+            this.groupBoxProduktySzczegolyProduktu.Controls.Add(this.buttonProduktyDodaj);
+            this.groupBoxProduktySzczegolyProduktu.Controls.Add(this.textBoxProduktyNazwaProduktu);
+            this.groupBoxProduktySzczegolyProduktu.Controls.Add(this.labelProduktyNazwaProduktu);
             this.groupBoxProduktySzczegolyProduktu.Location = new System.Drawing.Point(18, 75);
             this.groupBoxProduktySzczegolyProduktu.Name = "groupBoxProduktySzczegolyProduktu";
             this.groupBoxProduktySzczegolyProduktu.Size = new System.Drawing.Size(450, 354);
@@ -493,125 +353,135 @@ namespace HurtowniaSprzętuKomputerowego
             this.groupBoxProduktySzczegolyProduktu.TabStop = false;
             this.groupBoxProduktySzczegolyProduktu.Text = "Produkt";
             // 
-            // textBox4
+            // numericUpDownProduktyCenaJednostkowa
             // 
-            this.textBox4.Location = new System.Drawing.Point(180, 195);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(246, 70);
-            this.textBox4.TabIndex = 13;
+            this.numericUpDownProduktyCenaJednostkowa.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.numericUpDownProduktyCenaJednostkowa.Location = new System.Drawing.Point(180, 146);
+            this.numericUpDownProduktyCenaJednostkowa.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.numericUpDownProduktyCenaJednostkowa.Name = "numericUpDownProduktyCenaJednostkowa";
+            this.numericUpDownProduktyCenaJednostkowa.Size = new System.Drawing.Size(246, 29);
+            this.numericUpDownProduktyCenaJednostkowa.TabIndex = 14;
             // 
-            // label4
+            // textBoxProduktyInformacjeDodatkowe
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 218);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(168, 21);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Informacje dodatkowe:";
+            this.textBoxProduktyInformacjeDodatkowe.Location = new System.Drawing.Point(180, 195);
+            this.textBoxProduktyInformacjeDodatkowe.Multiline = true;
+            this.textBoxProduktyInformacjeDodatkowe.Name = "textBoxProduktyInformacjeDodatkowe";
+            this.textBoxProduktyInformacjeDodatkowe.Size = new System.Drawing.Size(246, 70);
+            this.textBoxProduktyInformacjeDodatkowe.TabIndex = 13;
             // 
-            // textBox1
+            // labelProduktyInformacjeDodatkowe
             // 
-            this.textBox1.Location = new System.Drawing.Point(180, 145);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(246, 29);
-            this.textBox1.TabIndex = 11;
+            this.labelProduktyInformacjeDodatkowe.AutoSize = true;
+            this.labelProduktyInformacjeDodatkowe.Location = new System.Drawing.Point(6, 218);
+            this.labelProduktyInformacjeDodatkowe.Name = "labelProduktyInformacjeDodatkowe";
+            this.labelProduktyInformacjeDodatkowe.Size = new System.Drawing.Size(168, 21);
+            this.labelProduktyInformacjeDodatkowe.TabIndex = 12;
+            this.labelProduktyInformacjeDodatkowe.Text = "Informacje dodatkowe:";
             // 
-            // label3
+            // labelProduktyCenaJednostkowa
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 148);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(140, 21);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Cena jednostkowa:";
+            this.labelProduktyCenaJednostkowa.AutoSize = true;
+            this.labelProduktyCenaJednostkowa.Location = new System.Drawing.Point(6, 148);
+            this.labelProduktyCenaJednostkowa.Name = "labelProduktyCenaJednostkowa";
+            this.labelProduktyCenaJednostkowa.Size = new System.Drawing.Size(140, 21);
+            this.labelProduktyCenaJednostkowa.TabIndex = 10;
+            this.labelProduktyCenaJednostkowa.Text = "Cena jednostkowa:";
             // 
-            // comboBox1
+            // comboBoxProduktyDostawca
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(180, 95);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(246, 29);
-            this.comboBox1.TabIndex = 9;
+            this.comboBoxProduktyDostawca.FormattingEnabled = true;
+            this.comboBoxProduktyDostawca.Location = new System.Drawing.Point(180, 95);
+            this.comboBoxProduktyDostawca.Name = "comboBoxProduktyDostawca";
+            this.comboBoxProduktyDostawca.Size = new System.Drawing.Size(246, 29);
+            this.comboBoxProduktyDostawca.TabIndex = 9;
             // 
-            // button1
+            // buttonProduktyUsun
             // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(346, 286);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 40);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Usuń";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonProduktyUsun.Enabled = false;
+            this.buttonProduktyUsun.Location = new System.Drawing.Point(346, 286);
+            this.buttonProduktyUsun.Name = "buttonProduktyUsun";
+            this.buttonProduktyUsun.Size = new System.Drawing.Size(80, 40);
+            this.buttonProduktyUsun.TabIndex = 8;
+            this.buttonProduktyUsun.Text = "Usuń";
+            this.buttonProduktyUsun.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonProduktyEdytuj
             // 
-            this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(180, 286);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 40);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Edytuj";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonProduktyEdytuj.Enabled = false;
+            this.buttonProduktyEdytuj.Location = new System.Drawing.Point(180, 286);
+            this.buttonProduktyEdytuj.Name = "buttonProduktyEdytuj";
+            this.buttonProduktyEdytuj.Size = new System.Drawing.Size(80, 40);
+            this.buttonProduktyEdytuj.TabIndex = 7;
+            this.buttonProduktyEdytuj.Text = "Edytuj";
+            this.buttonProduktyEdytuj.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // labelProduktyDostawca
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 98);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 21);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Dostawca:";
+            this.labelProduktyDostawca.AutoSize = true;
+            this.labelProduktyDostawca.Location = new System.Drawing.Point(6, 98);
+            this.labelProduktyDostawca.Name = "labelProduktyDostawca";
+            this.labelProduktyDostawca.Size = new System.Drawing.Size(80, 21);
+            this.labelProduktyDostawca.TabIndex = 5;
+            this.labelProduktyDostawca.Text = "Dostawca:";
             // 
-            // button3
+            // buttonProduktyDodaj
             // 
-            this.button3.Location = new System.Drawing.Point(6, 286);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(80, 40);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Dodaj";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonProduktyDodaj.Location = new System.Drawing.Point(6, 286);
+            this.buttonProduktyDodaj.Name = "buttonProduktyDodaj";
+            this.buttonProduktyDodaj.Size = new System.Drawing.Size(80, 40);
+            this.buttonProduktyDodaj.TabIndex = 0;
+            this.buttonProduktyDodaj.Text = "Dodaj";
+            this.buttonProduktyDodaj.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // textBoxProduktyNazwaProduktu
             // 
-            this.textBox3.Location = new System.Drawing.Point(180, 45);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(246, 29);
-            this.textBox3.TabIndex = 2;
+            this.textBoxProduktyNazwaProduktu.Location = new System.Drawing.Point(180, 45);
+            this.textBoxProduktyNazwaProduktu.Name = "textBoxProduktyNazwaProduktu";
+            this.textBoxProduktyNazwaProduktu.Size = new System.Drawing.Size(246, 29);
+            this.textBoxProduktyNazwaProduktu.TabIndex = 2;
             // 
-            // label2
+            // labelProduktyNazwaProduktu
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 48);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 21);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nazwa produktu:";
+            this.labelProduktyNazwaProduktu.AutoSize = true;
+            this.labelProduktyNazwaProduktu.Location = new System.Drawing.Point(6, 48);
+            this.labelProduktyNazwaProduktu.Name = "labelProduktyNazwaProduktu";
+            this.labelProduktyNazwaProduktu.Size = new System.Drawing.Size(128, 21);
+            this.labelProduktyNazwaProduktu.TabIndex = 1;
+            this.labelProduktyNazwaProduktu.Text = "Nazwa produktu:";
             // 
-            // groupBox3
+            // groupBoxProduktyListaProduktow
             // 
-            this.groupBox3.Controls.Add(this.dataGridView4);
-            this.groupBox3.Location = new System.Drawing.Point(25, 15);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(450, 520);
-            this.groupBox3.TabIndex = 0;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Lista produktów";
+            this.groupBoxProduktyListaProduktow.Controls.Add(this.dataGridViewProduktyListaProduktow);
+            this.groupBoxProduktyListaProduktow.Location = new System.Drawing.Point(25, 15);
+            this.groupBoxProduktyListaProduktow.Name = "groupBoxProduktyListaProduktow";
+            this.groupBoxProduktyListaProduktow.Size = new System.Drawing.Size(450, 520);
+            this.groupBoxProduktyListaProduktow.TabIndex = 0;
+            this.groupBoxProduktyListaProduktow.TabStop = false;
+            this.groupBoxProduktyListaProduktow.Text = "Lista produktów";
             // 
-            // dataGridView4
+            // dataGridViewProduktyListaProduktow
             // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView4.Location = new System.Drawing.Point(3, 25);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.RowTemplate.Height = 25;
-            this.dataGridView4.Size = new System.Drawing.Size(444, 492);
-            this.dataGridView4.TabIndex = 1;
+            this.dataGridViewProduktyListaProduktow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProduktyListaProduktow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewProduktyListaProduktow.Location = new System.Drawing.Point(3, 25);
+            this.dataGridViewProduktyListaProduktow.Name = "dataGridViewProduktyListaProduktow";
+            this.dataGridViewProduktyListaProduktow.RowTemplate.Height = 25;
+            this.dataGridViewProduktyListaProduktow.Size = new System.Drawing.Size(444, 492);
+            this.dataGridViewProduktyListaProduktow.TabIndex = 1;
             // 
             // tabPageDostawcy
             // 
             this.tabPageDostawcy.BackColor = System.Drawing.Color.Gainsboro;
-            this.tabPageDostawcy.Controls.Add(this.splitContainer1);
+            this.tabPageDostawcy.Controls.Add(this.splitContainerDostawcy);
             this.tabPageDostawcy.Location = new System.Drawing.Point(4, 34);
             this.tabPageDostawcy.Name = "tabPageDostawcy";
             this.tabPageDostawcy.Padding = new System.Windows.Forms.Padding(3);
@@ -619,28 +489,28 @@ namespace HurtowniaSprzętuKomputerowego
             this.tabPageDostawcy.TabIndex = 0;
             this.tabPageDostawcy.Text = "Dostawcy";
             // 
-            // splitContainer1
+            // splitContainerDostawcy
             // 
-            this.splitContainer1.Cursor = System.Windows.Forms.Cursors.VSplit;
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
-            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainerDostawcy.Cursor = System.Windows.Forms.Cursors.VSplit;
+            this.splitContainerDostawcy.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerDostawcy.Location = new System.Drawing.Point(3, 3);
+            this.splitContainerDostawcy.Name = "splitContainerDostawcy";
             // 
-            // splitContainer1.Panel1
+            // splitContainerDostawcy.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.groupBoxProduktyOferowanePrzezDostawce);
-            this.splitContainer1.Panel1.Controls.Add(this.groupBoxDostawcaSzczegoly);
+            this.splitContainerDostawcy.Panel1.Controls.Add(this.groupBoxProduktyOferowanePrzezDostawce);
+            this.splitContainerDostawcy.Panel1.Controls.Add(this.groupBoxDostawcaSzczegoly);
             // 
-            // splitContainer1.Panel2
+            // splitContainerDostawcy.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.groupBoxDostawcyListaDostawcow);
-            this.splitContainer1.Size = new System.Drawing.Size(986, 556);
-            this.splitContainer1.SplitterDistance = 486;
-            this.splitContainer1.TabIndex = 4;
+            this.splitContainerDostawcy.Panel2.Controls.Add(this.groupBoxDostawcyListaDostawcow);
+            this.splitContainerDostawcy.Size = new System.Drawing.Size(986, 556);
+            this.splitContainerDostawcy.SplitterDistance = 486;
+            this.splitContainerDostawcy.TabIndex = 4;
             // 
             // groupBoxProduktyOferowanePrzezDostawce
             // 
-            this.groupBoxProduktyOferowanePrzezDostawce.Controls.Add(this.dataGridView2);
+            this.groupBoxProduktyOferowanePrzezDostawce.Controls.Add(this.dataGridViewDostawcyProduktyOferowanePrzezDostawce);
             this.groupBoxProduktyOferowanePrzezDostawce.Location = new System.Drawing.Point(18, 271);
             this.groupBoxProduktyOferowanePrzezDostawce.Name = "groupBoxProduktyOferowanePrzezDostawce";
             this.groupBoxProduktyOferowanePrzezDostawce.Size = new System.Drawing.Size(450, 261);
@@ -648,21 +518,21 @@ namespace HurtowniaSprzętuKomputerowego
             this.groupBoxProduktyOferowanePrzezDostawce.TabStop = false;
             this.groupBoxProduktyOferowanePrzezDostawce.Text = "Produkty oferowane przez dostawce";
             // 
-            // dataGridView2
+            // dataGridViewDostawcyProduktyOferowanePrzezDostawce
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 25);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(444, 233);
-            this.dataGridView2.TabIndex = 0;
+            this.dataGridViewDostawcyProduktyOferowanePrzezDostawce.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDostawcyProduktyOferowanePrzezDostawce.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewDostawcyProduktyOferowanePrzezDostawce.Location = new System.Drawing.Point(3, 25);
+            this.dataGridViewDostawcyProduktyOferowanePrzezDostawce.Name = "dataGridViewDostawcyProduktyOferowanePrzezDostawce";
+            this.dataGridViewDostawcyProduktyOferowanePrzezDostawce.RowTemplate.Height = 25;
+            this.dataGridViewDostawcyProduktyOferowanePrzezDostawce.Size = new System.Drawing.Size(444, 233);
+            this.dataGridViewDostawcyProduktyOferowanePrzezDostawce.TabIndex = 0;
             // 
             // groupBoxDostawcaSzczegoly
             // 
-            this.groupBoxDostawcaSzczegoly.Controls.Add(this.buttonDostawcyUsun);
-            this.groupBoxDostawcaSzczegoly.Controls.Add(this.buttonDostawcyEdytuj);
-            this.groupBoxDostawcaSzczegoly.Controls.Add(this.textBox2);
+            this.groupBoxDostawcaSzczegoly.Controls.Add(this.buttonDostawcyUsunDostawce);
+            this.groupBoxDostawcaSzczegoly.Controls.Add(this.buttonDostawcyEdytujDostawce);
+            this.groupBoxDostawcaSzczegoly.Controls.Add(this.textBoxDostawcyInformacjeDodatkowe);
             this.groupBoxDostawcaSzczegoly.Controls.Add(this.labelDostawcyInformacjeDodatkowe);
             this.groupBoxDostawcaSzczegoly.Controls.Add(this.buttonDostawcyDodajDostawce);
             this.groupBoxDostawcaSzczegoly.Controls.Add(this.textBoxDostawcyNazwaDostawcy);
@@ -674,33 +544,33 @@ namespace HurtowniaSprzętuKomputerowego
             this.groupBoxDostawcaSzczegoly.TabStop = false;
             this.groupBoxDostawcaSzczegoly.Text = "Dostawca";
             // 
-            // buttonDostawcyUsun
+            // buttonDostawcyUsunDostawce
             // 
-            this.buttonDostawcyUsun.Enabled = false;
-            this.buttonDostawcyUsun.Location = new System.Drawing.Point(346, 178);
-            this.buttonDostawcyUsun.Name = "buttonDostawcyUsun";
-            this.buttonDostawcyUsun.Size = new System.Drawing.Size(80, 40);
-            this.buttonDostawcyUsun.TabIndex = 8;
-            this.buttonDostawcyUsun.Text = "Usuń";
-            this.buttonDostawcyUsun.UseVisualStyleBackColor = true;
+            this.buttonDostawcyUsunDostawce.Enabled = false;
+            this.buttonDostawcyUsunDostawce.Location = new System.Drawing.Point(346, 178);
+            this.buttonDostawcyUsunDostawce.Name = "buttonDostawcyUsunDostawce";
+            this.buttonDostawcyUsunDostawce.Size = new System.Drawing.Size(80, 40);
+            this.buttonDostawcyUsunDostawce.TabIndex = 8;
+            this.buttonDostawcyUsunDostawce.Text = "Usuń";
+            this.buttonDostawcyUsunDostawce.UseVisualStyleBackColor = true;
             // 
-            // buttonDostawcyEdytuj
+            // buttonDostawcyEdytujDostawce
             // 
-            this.buttonDostawcyEdytuj.Enabled = false;
-            this.buttonDostawcyEdytuj.Location = new System.Drawing.Point(180, 178);
-            this.buttonDostawcyEdytuj.Name = "buttonDostawcyEdytuj";
-            this.buttonDostawcyEdytuj.Size = new System.Drawing.Size(80, 40);
-            this.buttonDostawcyEdytuj.TabIndex = 7;
-            this.buttonDostawcyEdytuj.Text = "Edytuj";
-            this.buttonDostawcyEdytuj.UseVisualStyleBackColor = true;
+            this.buttonDostawcyEdytujDostawce.Enabled = false;
+            this.buttonDostawcyEdytujDostawce.Location = new System.Drawing.Point(180, 178);
+            this.buttonDostawcyEdytujDostawce.Name = "buttonDostawcyEdytujDostawce";
+            this.buttonDostawcyEdytujDostawce.Size = new System.Drawing.Size(80, 40);
+            this.buttonDostawcyEdytujDostawce.TabIndex = 7;
+            this.buttonDostawcyEdytujDostawce.Text = "Edytuj";
+            this.buttonDostawcyEdytujDostawce.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // textBoxDostawcyInformacjeDodatkowe
             // 
-            this.textBox2.Location = new System.Drawing.Point(180, 90);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(246, 70);
-            this.textBox2.TabIndex = 6;
+            this.textBoxDostawcyInformacjeDodatkowe.Location = new System.Drawing.Point(180, 90);
+            this.textBoxDostawcyInformacjeDodatkowe.Multiline = true;
+            this.textBoxDostawcyInformacjeDodatkowe.Name = "textBoxDostawcyInformacjeDodatkowe";
+            this.textBoxDostawcyInformacjeDodatkowe.Size = new System.Drawing.Size(246, 70);
+            this.textBoxDostawcyInformacjeDodatkowe.TabIndex = 6;
             // 
             // labelDostawcyInformacjeDodatkowe
             // 
@@ -719,6 +589,7 @@ namespace HurtowniaSprzętuKomputerowego
             this.buttonDostawcyDodajDostawce.TabIndex = 0;
             this.buttonDostawcyDodajDostawce.Text = "Dodaj";
             this.buttonDostawcyDodajDostawce.UseVisualStyleBackColor = true;
+            this.buttonDostawcyDodajDostawce.Click += new System.EventHandler(this.buttonDostawcyDodajDostawce_Click);
             // 
             // textBoxDostawcyNazwaDostawcy
             // 
@@ -738,7 +609,7 @@ namespace HurtowniaSprzętuKomputerowego
             // 
             // groupBoxDostawcyListaDostawcow
             // 
-            this.groupBoxDostawcyListaDostawcow.Controls.Add(this.dataGridView1);
+            this.groupBoxDostawcyListaDostawcow.Controls.Add(this.dataGridViewDostawcyListaDostawcow);
             this.groupBoxDostawcyListaDostawcow.Location = new System.Drawing.Point(25, 15);
             this.groupBoxDostawcyListaDostawcow.Name = "groupBoxDostawcyListaDostawcow";
             this.groupBoxDostawcyListaDostawcow.Size = new System.Drawing.Size(450, 520);
@@ -746,15 +617,15 @@ namespace HurtowniaSprzętuKomputerowego
             this.groupBoxDostawcyListaDostawcow.TabStop = false;
             this.groupBoxDostawcyListaDostawcow.Text = "Lista dostawców";
             // 
-            // dataGridView1
+            // dataGridViewDostawcyListaDostawcow
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 25);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(444, 492);
-            this.dataGridView1.TabIndex = 1;
+            this.dataGridViewDostawcyListaDostawcow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDostawcyListaDostawcow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewDostawcyListaDostawcow.Location = new System.Drawing.Point(3, 25);
+            this.dataGridViewDostawcyListaDostawcow.Name = "dataGridViewDostawcyListaDostawcow";
+            this.dataGridViewDostawcyListaDostawcow.RowTemplate.Height = 25;
+            this.dataGridViewDostawcyListaDostawcow.Size = new System.Drawing.Size(444, 492);
+            this.dataGridViewDostawcyListaDostawcow.TabIndex = 1;
             // 
             // tabControlPracownik
             // 
@@ -777,7 +648,7 @@ namespace HurtowniaSprzętuKomputerowego
             // tabPageInformacje
             // 
             this.tabPageInformacje.BackColor = System.Drawing.Color.Gainsboro;
-            this.tabPageInformacje.Controls.Add(this.groupBox6);
+            this.tabPageInformacje.Controls.Add(this.groupBoxInformacjeTwojeDane);
             this.tabPageInformacje.Location = new System.Drawing.Point(4, 34);
             this.tabPageInformacje.Name = "tabPageInformacje";
             this.tabPageInformacje.Padding = new System.Windows.Forms.Padding(3);
@@ -785,136 +656,161 @@ namespace HurtowniaSprzętuKomputerowego
             this.tabPageInformacje.TabIndex = 8;
             this.tabPageInformacje.Text = "Informacje";
             // 
-            // groupBox6
+            // groupBoxInformacjeTwojeDane
             // 
-            this.groupBox6.Controls.Add(this.label11);
-            this.groupBox6.Controls.Add(this.label12);
-            this.groupBox6.Controls.Add(this.label13);
-            this.groupBox6.Controls.Add(this.textBox11);
-            this.groupBox6.Controls.Add(this.textBox12);
-            this.groupBox6.Controls.Add(this.textBox13);
-            this.groupBox6.Controls.Add(this.textBox14);
-            this.groupBox6.Controls.Add(this.button8);
-            this.groupBox6.Controls.Add(this.button9);
-            this.groupBox6.Controls.Add(this.label14);
-            this.groupBox6.Controls.Add(this.button10);
-            this.groupBox6.Controls.Add(this.textBox15);
-            this.groupBox6.Controls.Add(this.label15);
-            this.groupBox6.Location = new System.Drawing.Point(271, 133);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(450, 323);
-            this.groupBox6.TabIndex = 5;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Twoje dane";
+            this.groupBoxInformacjeTwojeDane.Controls.Add(this.labelInformacjeAdres);
+            this.groupBoxInformacjeTwojeDane.Controls.Add(this.labelInformacjeHaslo);
+            this.groupBoxInformacjeTwojeDane.Controls.Add(this.labelinformacjeLogin);
+            this.groupBoxInformacjeTwojeDane.Controls.Add(this.textBoxInformacjeHaslo);
+            this.groupBoxInformacjeTwojeDane.Controls.Add(this.textBoxInformacjeLogin);
+            this.groupBoxInformacjeTwojeDane.Controls.Add(this.textBoxInformacjeAdres);
+            this.groupBoxInformacjeTwojeDane.Controls.Add(this.textBoxInformacjeNazwisko);
+            this.groupBoxInformacjeTwojeDane.Controls.Add(this.buttonInformacjeZapisz);
+            this.groupBoxInformacjeTwojeDane.Controls.Add(this.buttonInformacjeAnuluj);
+            this.groupBoxInformacjeTwojeDane.Controls.Add(this.labelInformacjeNazwisko);
+            this.groupBoxInformacjeTwojeDane.Controls.Add(this.buttonInformacjeEdytuj);
+            this.groupBoxInformacjeTwojeDane.Controls.Add(this.textBoxInformacjeImie);
+            this.groupBoxInformacjeTwojeDane.Controls.Add(this.labelInformacjeImie);
+            this.groupBoxInformacjeTwojeDane.Location = new System.Drawing.Point(271, 133);
+            this.groupBoxInformacjeTwojeDane.Name = "groupBoxInformacjeTwojeDane";
+            this.groupBoxInformacjeTwojeDane.Size = new System.Drawing.Size(450, 323);
+            this.groupBoxInformacjeTwojeDane.TabIndex = 5;
+            this.groupBoxInformacjeTwojeDane.TabStop = false;
+            this.groupBoxInformacjeTwojeDane.Text = "Twoje dane";
             // 
-            // label11
+            // labelInformacjeAdres
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(9, 128);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(50, 21);
-            this.label11.TabIndex = 15;
-            this.label11.Text = "Adres";
+            this.labelInformacjeAdres.AutoSize = true;
+            this.labelInformacjeAdres.Location = new System.Drawing.Point(9, 128);
+            this.labelInformacjeAdres.Name = "labelInformacjeAdres";
+            this.labelInformacjeAdres.Size = new System.Drawing.Size(50, 21);
+            this.labelInformacjeAdres.TabIndex = 15;
+            this.labelInformacjeAdres.Text = "Adres";
             // 
-            // label12
+            // labelInformacjeHaslo
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(9, 223);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(49, 21);
-            this.label12.TabIndex = 14;
-            this.label12.Text = "Hasło";
+            this.labelInformacjeHaslo.AutoSize = true;
+            this.labelInformacjeHaslo.Location = new System.Drawing.Point(9, 223);
+            this.labelInformacjeHaslo.Name = "labelInformacjeHaslo";
+            this.labelInformacjeHaslo.Size = new System.Drawing.Size(49, 21);
+            this.labelInformacjeHaslo.TabIndex = 14;
+            this.labelInformacjeHaslo.Text = "Hasło";
             // 
-            // label13
+            // labelinformacjeLogin
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(9, 173);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(52, 21);
-            this.label13.TabIndex = 13;
-            this.label13.Text = "Login:";
+            this.labelinformacjeLogin.AutoSize = true;
+            this.labelinformacjeLogin.Location = new System.Drawing.Point(9, 173);
+            this.labelinformacjeLogin.Name = "labelinformacjeLogin";
+            this.labelinformacjeLogin.Size = new System.Drawing.Size(52, 21);
+            this.labelinformacjeLogin.TabIndex = 13;
+            this.labelinformacjeLogin.Text = "Login:";
             // 
-            // textBox11
+            // textBoxInformacjeHaslo
             // 
-            this.textBox11.Location = new System.Drawing.Point(180, 220);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(246, 29);
-            this.textBox11.TabIndex = 12;
+            this.textBoxInformacjeHaslo.Location = new System.Drawing.Point(180, 220);
+            this.textBoxInformacjeHaslo.Name = "textBoxInformacjeHaslo";
+            this.textBoxInformacjeHaslo.Size = new System.Drawing.Size(246, 29);
+            this.textBoxInformacjeHaslo.TabIndex = 12;
             // 
-            // textBox12
+            // textBoxInformacjeLogin
             // 
-            this.textBox12.Location = new System.Drawing.Point(180, 170);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(246, 29);
-            this.textBox12.TabIndex = 11;
+            this.textBoxInformacjeLogin.Location = new System.Drawing.Point(180, 170);
+            this.textBoxInformacjeLogin.Name = "textBoxInformacjeLogin";
+            this.textBoxInformacjeLogin.Size = new System.Drawing.Size(246, 29);
+            this.textBoxInformacjeLogin.TabIndex = 11;
             // 
-            // textBox13
+            // textBoxInformacjeAdres
             // 
-            this.textBox13.Location = new System.Drawing.Point(180, 125);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(246, 29);
-            this.textBox13.TabIndex = 10;
+            this.textBoxInformacjeAdres.Location = new System.Drawing.Point(180, 125);
+            this.textBoxInformacjeAdres.Name = "textBoxInformacjeAdres";
+            this.textBoxInformacjeAdres.Size = new System.Drawing.Size(246, 29);
+            this.textBoxInformacjeAdres.TabIndex = 10;
             // 
-            // textBox14
+            // textBoxInformacjeNazwisko
             // 
-            this.textBox14.Location = new System.Drawing.Point(180, 81);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(246, 29);
-            this.textBox14.TabIndex = 9;
+            this.textBoxInformacjeNazwisko.Location = new System.Drawing.Point(180, 81);
+            this.textBoxInformacjeNazwisko.Name = "textBoxInformacjeNazwisko";
+            this.textBoxInformacjeNazwisko.Size = new System.Drawing.Size(246, 29);
+            this.textBoxInformacjeNazwisko.TabIndex = 9;
             // 
-            // button8
+            // buttonInformacjeZapisz
             // 
-            this.button8.Enabled = false;
-            this.button8.Location = new System.Drawing.Point(346, 277);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(80, 40);
-            this.button8.TabIndex = 8;
-            this.button8.Text = "Zapisz";
-            this.button8.UseVisualStyleBackColor = true;
+            this.buttonInformacjeZapisz.Enabled = false;
+            this.buttonInformacjeZapisz.Location = new System.Drawing.Point(346, 277);
+            this.buttonInformacjeZapisz.Name = "buttonInformacjeZapisz";
+            this.buttonInformacjeZapisz.Size = new System.Drawing.Size(80, 40);
+            this.buttonInformacjeZapisz.TabIndex = 8;
+            this.buttonInformacjeZapisz.Text = "Zapisz";
+            this.buttonInformacjeZapisz.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // buttonInformacjeAnuluj
             // 
-            this.button9.Enabled = false;
-            this.button9.Location = new System.Drawing.Point(180, 277);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(80, 40);
-            this.button9.TabIndex = 7;
-            this.button9.Text = "Anuluj";
-            this.button9.UseVisualStyleBackColor = true;
+            this.buttonInformacjeAnuluj.Enabled = false;
+            this.buttonInformacjeAnuluj.Location = new System.Drawing.Point(180, 277);
+            this.buttonInformacjeAnuluj.Name = "buttonInformacjeAnuluj";
+            this.buttonInformacjeAnuluj.Size = new System.Drawing.Size(80, 40);
+            this.buttonInformacjeAnuluj.TabIndex = 7;
+            this.buttonInformacjeAnuluj.Text = "Anuluj";
+            this.buttonInformacjeAnuluj.UseVisualStyleBackColor = true;
             // 
-            // label14
+            // labelInformacjeNazwisko
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 84);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(84, 21);
-            this.label14.TabIndex = 5;
-            this.label14.Text = "Nazwisko: ";
+            this.labelInformacjeNazwisko.AutoSize = true;
+            this.labelInformacjeNazwisko.Location = new System.Drawing.Point(6, 84);
+            this.labelInformacjeNazwisko.Name = "labelInformacjeNazwisko";
+            this.labelInformacjeNazwisko.Size = new System.Drawing.Size(84, 21);
+            this.labelInformacjeNazwisko.TabIndex = 5;
+            this.labelInformacjeNazwisko.Text = "Nazwisko: ";
             // 
-            // button10
+            // buttonInformacjeEdytuj
             // 
-            this.button10.Location = new System.Drawing.Point(6, 277);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(80, 40);
-            this.button10.TabIndex = 0;
-            this.button10.Text = "Edytuj";
-            this.button10.UseVisualStyleBackColor = true;
+            this.buttonInformacjeEdytuj.Location = new System.Drawing.Point(6, 277);
+            this.buttonInformacjeEdytuj.Name = "buttonInformacjeEdytuj";
+            this.buttonInformacjeEdytuj.Size = new System.Drawing.Size(80, 40);
+            this.buttonInformacjeEdytuj.TabIndex = 0;
+            this.buttonInformacjeEdytuj.Text = "Edytuj";
+            this.buttonInformacjeEdytuj.UseVisualStyleBackColor = true;
             // 
-            // textBox15
+            // textBoxInformacjeImie
             // 
-            this.textBox15.Location = new System.Drawing.Point(180, 37);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(246, 29);
-            this.textBox15.TabIndex = 2;
+            this.textBoxInformacjeImie.Location = new System.Drawing.Point(180, 37);
+            this.textBoxInformacjeImie.Name = "textBoxInformacjeImie";
+            this.textBoxInformacjeImie.Size = new System.Drawing.Size(246, 29);
+            this.textBoxInformacjeImie.TabIndex = 2;
             // 
-            // label15
+            // labelInformacjeImie
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(6, 40);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(43, 21);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "Imię:";
+            this.labelInformacjeImie.AutoSize = true;
+            this.labelInformacjeImie.Location = new System.Drawing.Point(6, 40);
+            this.labelInformacjeImie.Name = "labelInformacjeImie";
+            this.labelInformacjeImie.Size = new System.Drawing.Size(43, 21);
+            this.labelInformacjeImie.TabIndex = 1;
+            this.labelInformacjeImie.Text = "Imię:";
+            // 
+            // buttonKlienciSzukaj
+            // 
+            this.buttonKlienciSzukaj.Location = new System.Drawing.Point(386, 9);
+            this.buttonKlienciSzukaj.Name = "buttonKlienciSzukaj";
+            this.buttonKlienciSzukaj.Size = new System.Drawing.Size(80, 40);
+            this.buttonKlienciSzukaj.TabIndex = 10;
+            this.buttonKlienciSzukaj.Text = "Szukaj";
+            this.buttonKlienciSzukaj.UseVisualStyleBackColor = true;
+            // 
+            // textBoxKlienciFiltr
+            // 
+            this.textBoxKlienciFiltr.Location = new System.Drawing.Point(81, 16);
+            this.textBoxKlienciFiltr.Name = "textBoxKlienciFiltr";
+            this.textBoxKlienciFiltr.Size = new System.Drawing.Size(299, 29);
+            this.textBoxKlienciFiltr.TabIndex = 9;
+            // 
+            // labelKlienciFiltry
+            // 
+            this.labelKlienciFiltry.AutoSize = true;
+            this.labelKlienciFiltry.Location = new System.Drawing.Point(27, 19);
+            this.labelKlienciFiltry.Name = "labelKlienciFiltry";
+            this.labelKlienciFiltry.Size = new System.Drawing.Size(48, 21);
+            this.labelKlienciFiltry.TabIndex = 8;
+            this.labelKlienciFiltry.Text = "Filtry:";
             // 
             // FormPracownik
             // 
@@ -927,49 +823,49 @@ namespace HurtowniaSprzętuKomputerowego
             this.Text = "Pracownik";
             this.tabPageSprzedaze.ResumeLayout(false);
             this.tabPageSprzedaze.PerformLayout();
-            this.splitContainer4.Panel1.ResumeLayout(false);
-            this.splitContainer4.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
-            this.splitContainer4.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
-            this.groupBox7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
+            this.splitContainerSprzedaze.Panel1.ResumeLayout(false);
+            this.splitContainerSprzedaze.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerSprzedaze)).EndInit();
+            this.splitContainerSprzedaze.ResumeLayout(false);
+            this.groupBoxSprzedazeSprzedaze.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSprzedazeSprzedaze)).EndInit();
+            this.groupBoxSprzedazeKupioneProdukty.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSprzedazeKupioneProdukty)).EndInit();
             this.tabPageKlient.ResumeLayout(false);
-            this.splitContainer3.Panel1.ResumeLayout(false);
-            this.splitContainer3.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
-            this.splitContainer3.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            this.tabPageKlient.PerformLayout();
+            this.splitContainerKlienci.Panel1.ResumeLayout(false);
+            this.splitContainerKlienci.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerKlienci)).EndInit();
+            this.splitContainerKlienci.ResumeLayout(false);
+            this.groupBoxKlienciListaKlientow.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKlienciListaKlientow)).EndInit();
+            this.groupBoxKlienciKupnaKlienta.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKlienciKupnaKlienta)).EndInit();
             this.tabPageProdukty.ResumeLayout(false);
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
+            this.splitContainerProdukty.Panel1.ResumeLayout(false);
+            this.splitContainerProdukty.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerProdukty)).EndInit();
+            this.splitContainerProdukty.ResumeLayout(false);
             this.groupBoxProduktySzczegolyProduktu.ResumeLayout(false);
             this.groupBoxProduktySzczegolyProduktu.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownProduktyCenaJednostkowa)).EndInit();
+            this.groupBoxProduktyListaProduktow.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduktyListaProduktow)).EndInit();
             this.tabPageDostawcy.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.splitContainerDostawcy.Panel1.ResumeLayout(false);
+            this.splitContainerDostawcy.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerDostawcy)).EndInit();
+            this.splitContainerDostawcy.ResumeLayout(false);
             this.groupBoxProduktyOferowanePrzezDostawce.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDostawcyProduktyOferowanePrzezDostawce)).EndInit();
             this.groupBoxDostawcaSzczegoly.ResumeLayout(false);
             this.groupBoxDostawcaSzczegoly.PerformLayout();
             this.groupBoxDostawcyListaDostawcow.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDostawcyListaDostawcow)).EndInit();
             this.tabControlPracownik.ResumeLayout(false);
             this.tabPageInformacje.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
+            this.groupBoxInformacjeTwojeDane.ResumeLayout(false);
+            this.groupBoxInformacjeTwojeDane.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -977,79 +873,68 @@ namespace HurtowniaSprzętuKomputerowego
         #endregion
 
         private System.Windows.Forms.TabPage tabPageSprzedaze;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.SplitContainer splitContainer4;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.DataGridView dataGridView6;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.DataGridView dataGridView7;
+        private System.Windows.Forms.Button buttonSprzedazeSzukaj;
+        private System.Windows.Forms.TextBox textBoxSprzedarzeFiltr;
+        private System.Windows.Forms.Label labelSprzedarzeFiltry;
+        private System.Windows.Forms.SplitContainer splitContainerSprzedaze;
+        private System.Windows.Forms.GroupBox groupBoxSprzedazeSprzedaze;
+        private System.Windows.Forms.DataGridView dataGridViewSprzedazeSprzedaze;
+        private System.Windows.Forms.GroupBox groupBoxSprzedazeKupioneProdukty;
+        private System.Windows.Forms.DataGridView dataGridViewSprzedazeKupioneProdukty;
         private System.Windows.Forms.TabPage tabPageKlient;
-        private System.Windows.Forms.SplitContainer splitContainer3;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.SplitContainer splitContainerKlienci;
+        private System.Windows.Forms.GroupBox groupBoxKlienciListaKlientow;
+        private System.Windows.Forms.DataGridView dataGridViewKlienciListaKlientow;
+        private System.Windows.Forms.GroupBox groupBoxKlienciKupnaKlienta;
+        private System.Windows.Forms.DataGridView dataGridViewKlienciKupnaKlienta;
         private System.Windows.Forms.TabPage tabPageProdukty;
-        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.SplitContainer splitContainerProdukty;
         private System.Windows.Forms.GroupBox groupBoxProduktySzczegolyProduktu;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.TextBox textBoxProduktyInformacjeDodatkowe;
+        private System.Windows.Forms.Label labelProduktyInformacjeDodatkowe;
+        private System.Windows.Forms.Label labelProduktyCenaJednostkowa;
+        private System.Windows.Forms.ComboBox comboBoxProduktyDostawca;
+        private System.Windows.Forms.Button buttonProduktyUsun;
+        private System.Windows.Forms.Button buttonProduktyEdytuj;
+        private System.Windows.Forms.Label labelProduktyDostawca;
+        private System.Windows.Forms.Button buttonProduktyDodaj;
+        private System.Windows.Forms.TextBox textBoxProduktyNazwaProduktu;
+        private System.Windows.Forms.Label labelProduktyNazwaProduktu;
+        private System.Windows.Forms.GroupBox groupBoxProduktyListaProduktow;
+        private System.Windows.Forms.DataGridView dataGridViewProduktyListaProduktow;
         private System.Windows.Forms.TabPage tabPageDostawcy;
-        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.SplitContainer splitContainerDostawcy;
         private System.Windows.Forms.GroupBox groupBoxProduktyOferowanePrzezDostawce;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridViewDostawcyProduktyOferowanePrzezDostawce;
         private System.Windows.Forms.GroupBox groupBoxDostawcaSzczegoly;
-        private System.Windows.Forms.Button buttonDostawcyUsun;
-        private System.Windows.Forms.Button buttonDostawcyEdytuj;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button buttonDostawcyUsunDostawce;
+        private System.Windows.Forms.Button buttonDostawcyEdytujDostawce;
+        private System.Windows.Forms.TextBox textBoxDostawcyInformacjeDodatkowe;
         private System.Windows.Forms.Label labelDostawcyInformacjeDodatkowe;
         private System.Windows.Forms.Button buttonDostawcyDodajDostawce;
         private System.Windows.Forms.TextBox textBoxDostawcyNazwaDostawcy;
         private System.Windows.Forms.Label labelDostawcyNazwaDostawcy;
         private System.Windows.Forms.GroupBox groupBoxDostawcyListaDostawcow;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewDostawcyListaDostawcow;
         private System.Windows.Forms.TabControl tabControlPracownik;
         private System.Windows.Forms.TabPage tabPageInformacje;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.GroupBox groupBoxInformacjeTwojeDane;
+        private System.Windows.Forms.Label labelInformacjeAdres;
+        private System.Windows.Forms.Label labelInformacjeHaslo;
+        private System.Windows.Forms.Label labelinformacjeLogin;
+        private System.Windows.Forms.TextBox textBoxInformacjeHaslo;
+        private System.Windows.Forms.TextBox textBoxInformacjeLogin;
+        private System.Windows.Forms.TextBox textBoxInformacjeAdres;
+        private System.Windows.Forms.TextBox textBoxInformacjeNazwisko;
+        private System.Windows.Forms.Button buttonInformacjeZapisz;
+        private System.Windows.Forms.Button buttonInformacjeAnuluj;
+        private System.Windows.Forms.Label labelInformacjeNazwisko;
+        private System.Windows.Forms.Button buttonInformacjeEdytuj;
+        private System.Windows.Forms.TextBox textBoxInformacjeImie;
+        private System.Windows.Forms.Label labelInformacjeImie;
+        private System.Windows.Forms.NumericUpDown numericUpDownProduktyCenaJednostkowa;
+        private System.Windows.Forms.Button buttonKlienciSzukaj;
+        private System.Windows.Forms.TextBox textBoxKlienciFiltr;
+        private System.Windows.Forms.Label labelKlienciFiltry;
     }
 }
