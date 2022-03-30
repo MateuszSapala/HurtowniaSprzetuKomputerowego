@@ -1,6 +1,7 @@
 ﻿using HurtowniaSprzętuKomputerowego.common;
 using HurtowniaSprzętuKomputerowego.model;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -19,8 +20,9 @@ namespace HurtowniaSprzętuKomputerowego
         {
             string login = textBoxLogin.Text;
             string haslo = textBoxHaslo.Text;
+            List<SqlParameter> parameters = new List<SqlParameter> { new SqlParameter("@login", login), new SqlParameter("@haslo", haslo) };
 
-            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM Hurtownia.dbo.pracownik WHERE login='" + login + "' AND haslo='" + haslo + "';"))
+            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM Hurtownia.dbo.pracownik WHERE login=@login AND haslo=@haslo;", parameters))
             {
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
@@ -35,7 +37,7 @@ namespace HurtowniaSprzętuKomputerowego
                 }
             }
 
-            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM Hurtownia.dbo.klient WHERE login='" + login + "' AND haslo='" + haslo + "';"))
+            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM Hurtownia.dbo.klient WHERE login=@login AND haslo=@haslo;", parameters))
             {
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);

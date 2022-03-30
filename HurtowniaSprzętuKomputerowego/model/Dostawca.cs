@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 
 namespace HurtowniaSprzętuKomputerowego.model
@@ -15,6 +16,13 @@ namespace HurtowniaSprzętuKomputerowego.model
             Id = id;
             Nazwa = nazwa;
             InformacjeDodatkowe = informacjeDodatkowe;
+        }
+
+        public Dostawca(DataRow row)
+        {
+            Id = (int)row["id"];
+            Nazwa = (string)row["nazwa"];
+            InformacjeDodatkowe = (string)row["informacje_dodatkowe"];
         }
     }
 }

@@ -39,6 +39,9 @@ namespace HurtowniaSprzętuKomputerowego
             this.groupBoxSprzedazeKupioneProdukty = new System.Windows.Forms.GroupBox();
             this.dataGridViewSprzedazeKupioneProdukty = new System.Windows.Forms.DataGridView();
             this.tabPageKlient = new System.Windows.Forms.TabPage();
+            this.buttonKlienciSzukaj = new System.Windows.Forms.Button();
+            this.textBoxKlienciFiltr = new System.Windows.Forms.TextBox();
+            this.labelKlienciFiltry = new System.Windows.Forms.Label();
             this.splitContainerKlienci = new System.Windows.Forms.SplitContainer();
             this.groupBoxKlienciListaKlientow = new System.Windows.Forms.GroupBox();
             this.dataGridViewKlienciListaKlientow = new System.Windows.Forms.DataGridView();
@@ -90,9 +93,6 @@ namespace HurtowniaSprzętuKomputerowego
             this.buttonInformacjeEdytuj = new System.Windows.Forms.Button();
             this.textBoxInformacjeImie = new System.Windows.Forms.TextBox();
             this.labelInformacjeImie = new System.Windows.Forms.Label();
-            this.buttonKlienciSzukaj = new System.Windows.Forms.Button();
-            this.textBoxKlienciFiltr = new System.Windows.Forms.TextBox();
-            this.labelKlienciFiltry = new System.Windows.Forms.Label();
             this.tabPageSprzedaze.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerSprzedaze)).BeginInit();
             this.splitContainerSprzedaze.Panel1.SuspendLayout();
@@ -245,6 +245,31 @@ namespace HurtowniaSprzętuKomputerowego
             this.tabPageKlient.Size = new System.Drawing.Size(992, 562);
             this.tabPageKlient.TabIndex = 6;
             this.tabPageKlient.Text = "Klienci";
+            // 
+            // buttonKlienciSzukaj
+            // 
+            this.buttonKlienciSzukaj.Location = new System.Drawing.Point(386, 9);
+            this.buttonKlienciSzukaj.Name = "buttonKlienciSzukaj";
+            this.buttonKlienciSzukaj.Size = new System.Drawing.Size(80, 40);
+            this.buttonKlienciSzukaj.TabIndex = 10;
+            this.buttonKlienciSzukaj.Text = "Szukaj";
+            this.buttonKlienciSzukaj.UseVisualStyleBackColor = true;
+            // 
+            // textBoxKlienciFiltr
+            // 
+            this.textBoxKlienciFiltr.Location = new System.Drawing.Point(81, 16);
+            this.textBoxKlienciFiltr.Name = "textBoxKlienciFiltr";
+            this.textBoxKlienciFiltr.Size = new System.Drawing.Size(299, 29);
+            this.textBoxKlienciFiltr.TabIndex = 9;
+            // 
+            // labelKlienciFiltry
+            // 
+            this.labelKlienciFiltry.AutoSize = true;
+            this.labelKlienciFiltry.Location = new System.Drawing.Point(27, 19);
+            this.labelKlienciFiltry.Name = "labelKlienciFiltry";
+            this.labelKlienciFiltry.Size = new System.Drawing.Size(48, 21);
+            this.labelKlienciFiltry.TabIndex = 8;
+            this.labelKlienciFiltry.Text = "Filtry:";
             // 
             // splitContainerKlienci
             // 
@@ -406,7 +431,6 @@ namespace HurtowniaSprzętuKomputerowego
             // 
             // buttonProduktyUsun
             // 
-            this.buttonProduktyUsun.Enabled = false;
             this.buttonProduktyUsun.Location = new System.Drawing.Point(346, 286);
             this.buttonProduktyUsun.Name = "buttonProduktyUsun";
             this.buttonProduktyUsun.Size = new System.Drawing.Size(80, 40);
@@ -416,7 +440,6 @@ namespace HurtowniaSprzętuKomputerowego
             // 
             // buttonProduktyEdytuj
             // 
-            this.buttonProduktyEdytuj.Enabled = false;
             this.buttonProduktyEdytuj.Location = new System.Drawing.Point(180, 286);
             this.buttonProduktyEdytuj.Name = "buttonProduktyEdytuj";
             this.buttonProduktyEdytuj.Size = new System.Drawing.Size(80, 40);
@@ -546,23 +569,23 @@ namespace HurtowniaSprzętuKomputerowego
             // 
             // buttonDostawcyUsunDostawce
             // 
-            this.buttonDostawcyUsunDostawce.Enabled = false;
             this.buttonDostawcyUsunDostawce.Location = new System.Drawing.Point(346, 178);
             this.buttonDostawcyUsunDostawce.Name = "buttonDostawcyUsunDostawce";
             this.buttonDostawcyUsunDostawce.Size = new System.Drawing.Size(80, 40);
             this.buttonDostawcyUsunDostawce.TabIndex = 8;
             this.buttonDostawcyUsunDostawce.Text = "Usuń";
             this.buttonDostawcyUsunDostawce.UseVisualStyleBackColor = true;
+            this.buttonDostawcyUsunDostawce.Click += new System.EventHandler(this.buttonDostawcyUsunDostawce_Click);
             // 
             // buttonDostawcyEdytujDostawce
             // 
-            this.buttonDostawcyEdytujDostawce.Enabled = false;
             this.buttonDostawcyEdytujDostawce.Location = new System.Drawing.Point(180, 178);
             this.buttonDostawcyEdytujDostawce.Name = "buttonDostawcyEdytujDostawce";
             this.buttonDostawcyEdytujDostawce.Size = new System.Drawing.Size(80, 40);
             this.buttonDostawcyEdytujDostawce.TabIndex = 7;
             this.buttonDostawcyEdytujDostawce.Text = "Edytuj";
             this.buttonDostawcyEdytujDostawce.UseVisualStyleBackColor = true;
+            this.buttonDostawcyEdytujDostawce.Click += new System.EventHandler(this.buttonDostawcyEdytujDostawce_Click);
             // 
             // textBoxDostawcyInformacjeDodatkowe
             // 
@@ -619,13 +642,20 @@ namespace HurtowniaSprzętuKomputerowego
             // 
             // dataGridViewDostawcyListaDostawcow
             // 
+            this.dataGridViewDostawcyListaDostawcow.AllowUserToAddRows = false;
+            this.dataGridViewDostawcyListaDostawcow.AllowUserToDeleteRows = false;
+            this.dataGridViewDostawcyListaDostawcow.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewDostawcyListaDostawcow.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewDostawcyListaDostawcow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDostawcyListaDostawcow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewDostawcyListaDostawcow.Location = new System.Drawing.Point(3, 25);
+            this.dataGridViewDostawcyListaDostawcow.MultiSelect = false;
             this.dataGridViewDostawcyListaDostawcow.Name = "dataGridViewDostawcyListaDostawcow";
             this.dataGridViewDostawcyListaDostawcow.RowTemplate.Height = 25;
+            this.dataGridViewDostawcyListaDostawcow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewDostawcyListaDostawcow.Size = new System.Drawing.Size(444, 492);
             this.dataGridViewDostawcyListaDostawcow.TabIndex = 1;
+            this.dataGridViewDostawcyListaDostawcow.SelectionChanged += new System.EventHandler(this.dataGridViewDostawcyListaDostawcow_SelectionChanged);
             // 
             // tabControlPracownik
             // 
@@ -735,7 +765,6 @@ namespace HurtowniaSprzętuKomputerowego
             // 
             // buttonInformacjeZapisz
             // 
-            this.buttonInformacjeZapisz.Enabled = false;
             this.buttonInformacjeZapisz.Location = new System.Drawing.Point(346, 277);
             this.buttonInformacjeZapisz.Name = "buttonInformacjeZapisz";
             this.buttonInformacjeZapisz.Size = new System.Drawing.Size(80, 40);
@@ -745,7 +774,6 @@ namespace HurtowniaSprzętuKomputerowego
             // 
             // buttonInformacjeAnuluj
             // 
-            this.buttonInformacjeAnuluj.Enabled = false;
             this.buttonInformacjeAnuluj.Location = new System.Drawing.Point(180, 277);
             this.buttonInformacjeAnuluj.Name = "buttonInformacjeAnuluj";
             this.buttonInformacjeAnuluj.Size = new System.Drawing.Size(80, 40);
@@ -786,31 +814,6 @@ namespace HurtowniaSprzętuKomputerowego
             this.labelInformacjeImie.Size = new System.Drawing.Size(43, 21);
             this.labelInformacjeImie.TabIndex = 1;
             this.labelInformacjeImie.Text = "Imię:";
-            // 
-            // buttonKlienciSzukaj
-            // 
-            this.buttonKlienciSzukaj.Location = new System.Drawing.Point(386, 9);
-            this.buttonKlienciSzukaj.Name = "buttonKlienciSzukaj";
-            this.buttonKlienciSzukaj.Size = new System.Drawing.Size(80, 40);
-            this.buttonKlienciSzukaj.TabIndex = 10;
-            this.buttonKlienciSzukaj.Text = "Szukaj";
-            this.buttonKlienciSzukaj.UseVisualStyleBackColor = true;
-            // 
-            // textBoxKlienciFiltr
-            // 
-            this.textBoxKlienciFiltr.Location = new System.Drawing.Point(81, 16);
-            this.textBoxKlienciFiltr.Name = "textBoxKlienciFiltr";
-            this.textBoxKlienciFiltr.Size = new System.Drawing.Size(299, 29);
-            this.textBoxKlienciFiltr.TabIndex = 9;
-            // 
-            // labelKlienciFiltry
-            // 
-            this.labelKlienciFiltry.AutoSize = true;
-            this.labelKlienciFiltry.Location = new System.Drawing.Point(27, 19);
-            this.labelKlienciFiltry.Name = "labelKlienciFiltry";
-            this.labelKlienciFiltry.Size = new System.Drawing.Size(48, 21);
-            this.labelKlienciFiltry.TabIndex = 8;
-            this.labelKlienciFiltry.Text = "Filtry:";
             // 
             // FormPracownik
             // 

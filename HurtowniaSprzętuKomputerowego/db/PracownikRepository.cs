@@ -1,6 +1,7 @@
 ﻿using HurtowniaSprzętuKomputerowego.common;
 using HurtowniaSprzętuKomputerowego.model;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -12,17 +13,54 @@ namespace HurtowniaSprzętuKomputerowego.db
         {
             using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM Hurtownia.dbo.dostawca WHERE 0=1;"))
             {
-                DataSet dataSet = new DataSet();
-                dataAdapter.Fill(dataSet);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
 
-                var x = dataSet.Tables;
-                var nowyDostawca = dataSet.Tables[0].NewRow();
-                nowyDostawca["nazwa"] = nazwa;
-                nowyDostawca["informacje_dodatkowe"] = informacjeDodatkowe;
-                dataSet.Tables[0].Rows.Add(nowyDostawca);
+                DataRow dostawca = dataTable.NewRow();
+                dostawca["nazwa"] = nazwa;
+                dostawca["informacje_dodatkowe"] = informacjeDodatkowe;
+                dataTable.Rows.Add(dostawca);
 
                 new SqlCommandBuilder(dataAdapter);
-                dataAdapter.Update(dataSet);
+                dataAdapter.Update(dataTable);
+            }
+        }
+
+        public static void EdytujDostawce(int id, string nazwa, string informacjeDodatkowe)
+        {
+            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM Hurtownia.dbo.dostawca WHERE id=@id;", new List<SqlParameter> { new SqlParameter("@id", id) }))
+            {
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+
+                DataRow dostawca = dataTable.Rows[0];
+                dostawca["nazwa"] = nazwa;
+                dostawca["informacje_dodatkowe"] = informacjeDodatkowe;
+
+                new SqlCommandBuilder(dataAdapter);
+                dataAdapter.Update(dataTable);
+            }
+        }
+
+        public static DataTable PobierzDostawcow()
+        {
+            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM Hurtownia.dbo.dostawca"))
+            {
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+                return dataTable;
+            }
+        }
+
+        public static void UsunDostawce(int id)
+        {
+            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM Hurtownia.dbo.dostawca WHERE id=@id;", new List<SqlParameter> { new SqlParameter("@id", id) }))
+            {
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+                dataTable.Rows[0].Delete();
+                new SqlCommandBuilder(dataAdapter);
+                dataAdapter.Update(dataTable);
             }
         }
     }
