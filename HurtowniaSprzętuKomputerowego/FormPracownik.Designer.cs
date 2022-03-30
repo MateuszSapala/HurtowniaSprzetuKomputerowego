@@ -437,6 +437,7 @@ namespace HurtowniaSprzętuKomputerowego
             this.buttonProduktyUsun.TabIndex = 8;
             this.buttonProduktyUsun.Text = "Usuń";
             this.buttonProduktyUsun.UseVisualStyleBackColor = true;
+            this.buttonProduktyUsun.Click += new System.EventHandler(this.buttonProduktyUsun_Click);
             // 
             // buttonProduktyEdytuj
             // 
@@ -446,6 +447,7 @@ namespace HurtowniaSprzętuKomputerowego
             this.buttonProduktyEdytuj.TabIndex = 7;
             this.buttonProduktyEdytuj.Text = "Edytuj";
             this.buttonProduktyEdytuj.UseVisualStyleBackColor = true;
+            this.buttonProduktyEdytuj.Click += new System.EventHandler(this.buttonProduktyEdytuj_Click);
             // 
             // labelProduktyDostawca
             // 
@@ -464,6 +466,7 @@ namespace HurtowniaSprzętuKomputerowego
             this.buttonProduktyDodaj.TabIndex = 0;
             this.buttonProduktyDodaj.Text = "Dodaj";
             this.buttonProduktyDodaj.UseVisualStyleBackColor = true;
+            this.buttonProduktyDodaj.Click += new System.EventHandler(this.buttonProduktyDodaj_Click);
             // 
             // textBoxProduktyNazwaProduktu
             // 
@@ -493,13 +496,18 @@ namespace HurtowniaSprzętuKomputerowego
             // 
             // dataGridViewProduktyListaProduktow
             // 
+            this.dataGridViewProduktyListaProduktow.AllowUserToAddRows = false;
+            this.dataGridViewProduktyListaProduktow.AllowUserToDeleteRows = false;
             this.dataGridViewProduktyListaProduktow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProduktyListaProduktow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewProduktyListaProduktow.Location = new System.Drawing.Point(3, 25);
+            this.dataGridViewProduktyListaProduktow.MultiSelect = false;
             this.dataGridViewProduktyListaProduktow.Name = "dataGridViewProduktyListaProduktow";
             this.dataGridViewProduktyListaProduktow.RowTemplate.Height = 25;
+            this.dataGridViewProduktyListaProduktow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProduktyListaProduktow.Size = new System.Drawing.Size(444, 492);
             this.dataGridViewProduktyListaProduktow.TabIndex = 1;
+            this.dataGridViewProduktyListaProduktow.SelectionChanged += new System.EventHandler(this.dataGridViewProduktyListaProduktow_SelectionChanged);
             // 
             // tabPageDostawcy
             // 
@@ -543,11 +551,15 @@ namespace HurtowniaSprzętuKomputerowego
             // 
             // dataGridViewDostawcyProduktyOferowanePrzezDostawce
             // 
+            this.dataGridViewDostawcyProduktyOferowanePrzezDostawce.AllowUserToAddRows = false;
+            this.dataGridViewDostawcyProduktyOferowanePrzezDostawce.AllowUserToDeleteRows = false;
             this.dataGridViewDostawcyProduktyOferowanePrzezDostawce.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDostawcyProduktyOferowanePrzezDostawce.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewDostawcyProduktyOferowanePrzezDostawce.Location = new System.Drawing.Point(3, 25);
+            this.dataGridViewDostawcyProduktyOferowanePrzezDostawce.MultiSelect = false;
             this.dataGridViewDostawcyProduktyOferowanePrzezDostawce.Name = "dataGridViewDostawcyProduktyOferowanePrzezDostawce";
             this.dataGridViewDostawcyProduktyOferowanePrzezDostawce.RowTemplate.Height = 25;
+            this.dataGridViewDostawcyProduktyOferowanePrzezDostawce.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewDostawcyProduktyOferowanePrzezDostawce.Size = new System.Drawing.Size(444, 233);
             this.dataGridViewDostawcyProduktyOferowanePrzezDostawce.TabIndex = 0;
             // 

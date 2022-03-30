@@ -21,7 +21,7 @@ CREATE TABLE Hurtownia.dbo.produkt(
 	id INT IDENTITY(1,1) PRIMARY KEY,
 	dostawca_id INT FOREIGN KEY REFERENCES Hurtownia.dbo.dostawca(id),
 	nazwa_sprzetu VARCHAR(50) NOT NULL,
-	ilosc_na_magazynie INT NOT NULL,
+	informacje_dodatkowe VARCHAR(255) NOT NULL,
 	cena_jednostkowa MONEY NOT NULL,
 );
 
@@ -70,3 +70,4 @@ INSERT INTO Hurtownia.dbo.klient (imie, nazwisko, adres, login, haslo) VALUES ('
 --SELECT * FROM Hurtownia.dbo.produkt;
 --SELECT * FROM Hurtownia.dbo.dostawca;
 --SELECT * FROM Hurtownia.dbo.pracownik;
+--SELECT p.id, d.nazwa, p.nazwa_sprzetu, p.informacje_dodatkowe, p.cena_jednostkowa, d.id AS dostawca_id FROM Hurtownia.dbo.produkt AS p, Hurtownia.dbo.dostawca AS d WHERE p.dostawca_id=d.id;

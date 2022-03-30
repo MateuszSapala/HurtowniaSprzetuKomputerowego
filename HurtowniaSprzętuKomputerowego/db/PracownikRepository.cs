@@ -9,9 +9,11 @@ namespace HurtowniaSprzętuKomputerowego.db
 {
     static class PracownikRepository
     {
+        private const string tabela = "Hurtownia.dbo.dostawca";
+
         public static void DodajDostawce(string nazwa, string informacjeDodatkowe)
         {
-            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM Hurtownia.dbo.dostawca WHERE 0=1;"))
+            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM "+tabela+" WHERE 0=1;"))
             {
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
@@ -28,7 +30,7 @@ namespace HurtowniaSprzętuKomputerowego.db
 
         public static void EdytujDostawce(int id, string nazwa, string informacjeDodatkowe)
         {
-            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM Hurtownia.dbo.dostawca WHERE id=@id;", new List<SqlParameter> { new SqlParameter("@id", id) }))
+            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM "+tabela+" WHERE id=@id;", new List<SqlParameter> { new SqlParameter("@id", id) }))
             {
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
@@ -44,7 +46,7 @@ namespace HurtowniaSprzętuKomputerowego.db
 
         public static DataTable PobierzDostawcow()
         {
-            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM Hurtownia.dbo.dostawca"))
+            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM "+tabela))
             {
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
@@ -54,7 +56,7 @@ namespace HurtowniaSprzętuKomputerowego.db
 
         public static void UsunDostawce(int id)
         {
-            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM Hurtownia.dbo.dostawca WHERE id=@id;", new List<SqlParameter> { new SqlParameter("@id", id) }))
+            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM "+tabela+" WHERE id=@id;", new List<SqlParameter> { new SqlParameter("@id", id) }))
             {
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
