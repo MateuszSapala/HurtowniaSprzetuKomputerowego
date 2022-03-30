@@ -30,9 +30,6 @@ namespace HurtowniaSprzętuKomputerowego
         private void InitializeComponent()
         {
             this.tabPageSprzedaze = new System.Windows.Forms.TabPage();
-            this.buttonSprzedazeSzukaj = new System.Windows.Forms.Button();
-            this.textBoxSprzedarzeFiltr = new System.Windows.Forms.TextBox();
-            this.labelSprzedarzeFiltry = new System.Windows.Forms.Label();
             this.splitContainerSprzedaze = new System.Windows.Forms.SplitContainer();
             this.groupBoxSprzedazeSprzedaze = new System.Windows.Forms.GroupBox();
             this.dataGridViewSprzedazeSprzedaze = new System.Windows.Forms.DataGridView();
@@ -138,9 +135,6 @@ namespace HurtowniaSprzętuKomputerowego
             // tabPageSprzedaze
             // 
             this.tabPageSprzedaze.BackColor = System.Drawing.Color.Gainsboro;
-            this.tabPageSprzedaze.Controls.Add(this.buttonSprzedazeSzukaj);
-            this.tabPageSprzedaze.Controls.Add(this.textBoxSprzedarzeFiltr);
-            this.tabPageSprzedaze.Controls.Add(this.labelSprzedarzeFiltry);
             this.tabPageSprzedaze.Controls.Add(this.splitContainerSprzedaze);
             this.tabPageSprzedaze.Location = new System.Drawing.Point(4, 34);
             this.tabPageSprzedaze.Name = "tabPageSprzedaze";
@@ -149,36 +143,11 @@ namespace HurtowniaSprzętuKomputerowego
             this.tabPageSprzedaze.TabIndex = 7;
             this.tabPageSprzedaze.Text = "Sprzedaże";
             // 
-            // buttonSprzedazeSzukaj
-            // 
-            this.buttonSprzedazeSzukaj.Location = new System.Drawing.Point(386, 9);
-            this.buttonSprzedazeSzukaj.Name = "buttonSprzedazeSzukaj";
-            this.buttonSprzedazeSzukaj.Size = new System.Drawing.Size(80, 40);
-            this.buttonSprzedazeSzukaj.TabIndex = 7;
-            this.buttonSprzedazeSzukaj.Text = "Szukaj";
-            this.buttonSprzedazeSzukaj.UseVisualStyleBackColor = true;
-            // 
-            // textBoxSprzedarzeFiltr
-            // 
-            this.textBoxSprzedarzeFiltr.Location = new System.Drawing.Point(81, 16);
-            this.textBoxSprzedarzeFiltr.Name = "textBoxSprzedarzeFiltr";
-            this.textBoxSprzedarzeFiltr.Size = new System.Drawing.Size(299, 29);
-            this.textBoxSprzedarzeFiltr.TabIndex = 6;
-            // 
-            // labelSprzedarzeFiltry
-            // 
-            this.labelSprzedarzeFiltry.AutoSize = true;
-            this.labelSprzedarzeFiltry.Location = new System.Drawing.Point(27, 19);
-            this.labelSprzedarzeFiltry.Name = "labelSprzedarzeFiltry";
-            this.labelSprzedarzeFiltry.Size = new System.Drawing.Size(48, 21);
-            this.labelSprzedarzeFiltry.TabIndex = 5;
-            this.labelSprzedarzeFiltry.Text = "Filtry:";
-            // 
             // splitContainerSprzedaze
             // 
             this.splitContainerSprzedaze.Cursor = System.Windows.Forms.Cursors.VSplit;
-            this.splitContainerSprzedaze.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitContainerSprzedaze.Location = new System.Drawing.Point(3, 60);
+            this.splitContainerSprzedaze.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerSprzedaze.Location = new System.Drawing.Point(3, 3);
             this.splitContainerSprzedaze.Name = "splitContainerSprzedaze";
             // 
             // splitContainerSprzedaze.Panel1
@@ -188,7 +157,7 @@ namespace HurtowniaSprzętuKomputerowego
             // splitContainerSprzedaze.Panel2
             // 
             this.splitContainerSprzedaze.Panel2.Controls.Add(this.groupBoxSprzedazeKupioneProdukty);
-            this.splitContainerSprzedaze.Size = new System.Drawing.Size(986, 499);
+            this.splitContainerSprzedaze.Size = new System.Drawing.Size(986, 556);
             this.splitContainerSprzedaze.SplitterDistance = 486;
             this.splitContainerSprzedaze.TabIndex = 4;
             // 
@@ -197,39 +166,48 @@ namespace HurtowniaSprzętuKomputerowego
             this.groupBoxSprzedazeSprzedaze.Controls.Add(this.dataGridViewSprzedazeSprzedaze);
             this.groupBoxSprzedazeSprzedaze.Location = new System.Drawing.Point(18, 15);
             this.groupBoxSprzedazeSprzedaze.Name = "groupBoxSprzedazeSprzedaze";
-            this.groupBoxSprzedazeSprzedaze.Size = new System.Drawing.Size(450, 467);
+            this.groupBoxSprzedazeSprzedaze.Size = new System.Drawing.Size(450, 520);
             this.groupBoxSprzedazeSprzedaze.TabIndex = 5;
             this.groupBoxSprzedazeSprzedaze.TabStop = false;
             this.groupBoxSprzedazeSprzedaze.Text = "Sprzedaże";
             // 
             // dataGridViewSprzedazeSprzedaze
             // 
+            this.dataGridViewSprzedazeSprzedaze.AllowUserToAddRows = false;
+            this.dataGridViewSprzedazeSprzedaze.AllowUserToDeleteRows = false;
             this.dataGridViewSprzedazeSprzedaze.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewSprzedazeSprzedaze.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewSprzedazeSprzedaze.Location = new System.Drawing.Point(3, 25);
+            this.dataGridViewSprzedazeSprzedaze.MultiSelect = false;
             this.dataGridViewSprzedazeSprzedaze.Name = "dataGridViewSprzedazeSprzedaze";
             this.dataGridViewSprzedazeSprzedaze.RowTemplate.Height = 25;
-            this.dataGridViewSprzedazeSprzedaze.Size = new System.Drawing.Size(444, 439);
+            this.dataGridViewSprzedazeSprzedaze.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewSprzedazeSprzedaze.Size = new System.Drawing.Size(444, 492);
             this.dataGridViewSprzedazeSprzedaze.TabIndex = 0;
+            this.dataGridViewSprzedazeSprzedaze.SelectionChanged += new System.EventHandler(this.dataGridViewSprzedazeSprzedaze_SelectionChanged);
             // 
             // groupBoxSprzedazeKupioneProdukty
             // 
             this.groupBoxSprzedazeKupioneProdukty.Controls.Add(this.dataGridViewSprzedazeKupioneProdukty);
             this.groupBoxSprzedazeKupioneProdukty.Location = new System.Drawing.Point(25, 15);
             this.groupBoxSprzedazeKupioneProdukty.Name = "groupBoxSprzedazeKupioneProdukty";
-            this.groupBoxSprzedazeKupioneProdukty.Size = new System.Drawing.Size(450, 467);
+            this.groupBoxSprzedazeKupioneProdukty.Size = new System.Drawing.Size(452, 520);
             this.groupBoxSprzedazeKupioneProdukty.TabIndex = 0;
             this.groupBoxSprzedazeKupioneProdukty.TabStop = false;
             this.groupBoxSprzedazeKupioneProdukty.Text = "Kupione produkty";
             // 
             // dataGridViewSprzedazeKupioneProdukty
             // 
+            this.dataGridViewSprzedazeKupioneProdukty.AllowUserToAddRows = false;
+            this.dataGridViewSprzedazeKupioneProdukty.AllowUserToDeleteRows = false;
             this.dataGridViewSprzedazeKupioneProdukty.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewSprzedazeKupioneProdukty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewSprzedazeKupioneProdukty.Location = new System.Drawing.Point(3, 25);
+            this.dataGridViewSprzedazeKupioneProdukty.MultiSelect = false;
             this.dataGridViewSprzedazeKupioneProdukty.Name = "dataGridViewSprzedazeKupioneProdukty";
             this.dataGridViewSprzedazeKupioneProdukty.RowTemplate.Height = 25;
-            this.dataGridViewSprzedazeKupioneProdukty.Size = new System.Drawing.Size(444, 439);
+            this.dataGridViewSprzedazeKupioneProdukty.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewSprzedazeKupioneProdukty.Size = new System.Drawing.Size(446, 492);
             this.dataGridViewSprzedazeKupioneProdukty.TabIndex = 1;
             // 
             // tabPageKlient
@@ -254,6 +232,7 @@ namespace HurtowniaSprzętuKomputerowego
             this.buttonKlienciSzukaj.TabIndex = 10;
             this.buttonKlienciSzukaj.Text = "Szukaj";
             this.buttonKlienciSzukaj.UseVisualStyleBackColor = true;
+            this.buttonKlienciSzukaj.Click += new System.EventHandler(this.buttonKlienciSzukaj_Click);
             // 
             // textBoxKlienciFiltr
             // 
@@ -301,13 +280,18 @@ namespace HurtowniaSprzętuKomputerowego
             // 
             // dataGridViewKlienciListaKlientow
             // 
+            this.dataGridViewKlienciListaKlientow.AllowUserToAddRows = false;
+            this.dataGridViewKlienciListaKlientow.AllowUserToDeleteRows = false;
             this.dataGridViewKlienciListaKlientow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewKlienciListaKlientow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewKlienciListaKlientow.Location = new System.Drawing.Point(3, 25);
+            this.dataGridViewKlienciListaKlientow.MultiSelect = false;
             this.dataGridViewKlienciListaKlientow.Name = "dataGridViewKlienciListaKlientow";
             this.dataGridViewKlienciListaKlientow.RowTemplate.Height = 25;
+            this.dataGridViewKlienciListaKlientow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewKlienciListaKlientow.Size = new System.Drawing.Size(444, 439);
             this.dataGridViewKlienciListaKlientow.TabIndex = 0;
+            this.dataGridViewKlienciListaKlientow.SelectionChanged += new System.EventHandler(this.dataGridViewKlienciListaKlientow_SelectionChanged);
             // 
             // groupBoxKlienciKupnaKlienta
             // 
@@ -321,11 +305,15 @@ namespace HurtowniaSprzętuKomputerowego
             // 
             // dataGridViewKlienciKupnaKlienta
             // 
+            this.dataGridViewKlienciKupnaKlienta.AllowUserToAddRows = false;
+            this.dataGridViewKlienciKupnaKlienta.AllowUserToDeleteRows = false;
             this.dataGridViewKlienciKupnaKlienta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewKlienciKupnaKlienta.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewKlienciKupnaKlienta.Location = new System.Drawing.Point(3, 25);
+            this.dataGridViewKlienciKupnaKlienta.MultiSelect = false;
             this.dataGridViewKlienciKupnaKlienta.Name = "dataGridViewKlienciKupnaKlienta";
             this.dataGridViewKlienciKupnaKlienta.RowTemplate.Height = 25;
+            this.dataGridViewKlienciKupnaKlienta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewKlienciKupnaKlienta.Size = new System.Drawing.Size(444, 439);
             this.dataGridViewKlienciKupnaKlienta.TabIndex = 1;
             // 
@@ -837,7 +825,6 @@ namespace HurtowniaSprzętuKomputerowego
             this.Name = "FormPracownik";
             this.Text = "Pracownik";
             this.tabPageSprzedaze.ResumeLayout(false);
-            this.tabPageSprzedaze.PerformLayout();
             this.splitContainerSprzedaze.Panel1.ResumeLayout(false);
             this.splitContainerSprzedaze.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerSprzedaze)).EndInit();
@@ -888,9 +875,6 @@ namespace HurtowniaSprzętuKomputerowego
         #endregion
 
         private System.Windows.Forms.TabPage tabPageSprzedaze;
-        private System.Windows.Forms.Button buttonSprzedazeSzukaj;
-        private System.Windows.Forms.TextBox textBoxSprzedarzeFiltr;
-        private System.Windows.Forms.Label labelSprzedarzeFiltry;
         private System.Windows.Forms.SplitContainer splitContainerSprzedaze;
         private System.Windows.Forms.GroupBox groupBoxSprzedazeSprzedaze;
         private System.Windows.Forms.DataGridView dataGridViewSprzedazeSprzedaze;

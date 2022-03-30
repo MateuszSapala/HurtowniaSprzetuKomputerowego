@@ -22,6 +22,8 @@ namespace HurtowniaSprzętuKomputerowego
             comboBoxProduktyDostawca.ValueMember = "Id";
             zaladujDostawcow();
             zaladujProdukty();
+            zaladujKlientow();
+            zaladujSprzedaz();
         }
 
         private object pobierzWybranaWartoscKloumny(DataGridView data, string nazwaKolumny)
@@ -72,6 +74,37 @@ namespace HurtowniaSprzętuKomputerowego
             try
             {
                 dataGridViewProduktyListaProduktow.DataSource = ProduktRepository.PobierzProdukty();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void zaladujKlientow()
+        {
+            try
+            {
+                if (textBoxKlienciFiltr.Text.Trim() == "")
+                {
+                    dataGridViewKlienciListaKlientow.DataSource = KlientRepository.PobierzKlientow();
+                    return;
+                }
+                dataGridViewKlienciListaKlientow.DataSource = KlientRepository.PobierzKlientow(textBoxKlienciFiltr.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void zaladujSprzedaz()
+        {
+            try
+            {
+                dataGridViewSprzedazeSprzedaze.DataSource = SprzedazRepository.PobierzSprzedaze();
             }
             catch (Exception ex)
             {
@@ -204,5 +237,29 @@ namespace HurtowniaSprzętuKomputerowego
         }
         #endregion
 
+        #region Klienci
+        private void buttonKlienciSzukaj_Click(object sender, EventArgs e)
+        {
+            zaladujKlientow();
+        }
+
+        private void dataGridViewKlienciListaKlientow_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                dataGridViewKlienciKupnaKlienta.DataSource = SprzedazRepository.PobierzSprzedaze(pobierzWybranyId(dataGridViewKlienciListaKlientow));
+            }
+            catch (Exception ex) { }
+        }
+        #endregion
+
+        private void dataGridViewSprzedazeSprzedaze_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                dataGridViewSprzedazeKupioneProdukty.DataSource = PozycjaSprzedazyRepository.PobierzPozycje(pobierzWybranyId(dataGridViewSprzedazeSprzedaze));
+            }
+            catch (Exception ex) { }
+        }
     }
 }

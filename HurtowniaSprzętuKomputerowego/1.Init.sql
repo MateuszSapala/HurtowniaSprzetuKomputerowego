@@ -62,6 +62,11 @@ CREATE TABLE Hurtownia.dbo.pracownik(
 --Dodanie przyk³adowych danych
 INSERT INTO Hurtownia.dbo.pracownik (imie, nazwisko, adres, login, haslo) VALUES ('Mateusz', 'Sapa³a', 'Adres', 'admin', 'pass');
 INSERT INTO Hurtownia.dbo.klient (imie, nazwisko, adres, login, haslo) VALUES ('Jan', 'Nowak', 'Adres', 'user', 'pass');
+INSERT INTO Hurtownia.dbo.klient (imie, nazwisko, adres, login, haslo) VALUES ('Adam', 'Nowak', 'Adres2', 'user2', 'pass');
+INSERT INTO Hurtownia.dbo.klient (imie, nazwisko, adres, login, haslo) VALUES ('Tomasz', 'Kowalski', 'Adres3', 'user3', 'pass');
+
+INSERT INTO Hurtownia.dbo.sprzedaz (klient_id, status, suma, data_sprzedazy) VALUES (1, 1, 2, GETDATE());
+INSERT INTO Hurtownia.dbo.pozycja_sprzedazy (sprzedaz_id, produkt_id, zamowiona_ilosc, wartosc) VALUES (1, 8, 2, 200);
 
 --Pobieranie danych
 --SELECT * FROM Hurtownia.dbo.pozycja_sprzedazy;
@@ -71,3 +76,11 @@ INSERT INTO Hurtownia.dbo.klient (imie, nazwisko, adres, login, haslo) VALUES ('
 --SELECT * FROM Hurtownia.dbo.dostawca;
 --SELECT * FROM Hurtownia.dbo.pracownik;
 --SELECT p.id, d.nazwa, p.nazwa_sprzetu, p.informacje_dodatkowe, p.cena_jednostkowa, d.id AS dostawca_id FROM Hurtownia.dbo.produkt AS p, Hurtownia.dbo.dostawca AS d WHERE p.dostawca_id=d.id;
+SELECT * FROM Hurtownia.dbo.klient AS k WHERE LOWER('jan') LIKE LOWER(k.imie)+'|'+LOWER(k.nazwisko)+'|'+LOWER(k.adres)+'|'+LOWER(k.login);
+
+SELECT * FROM Hurtownia.dbo.klient AS k WHERE LOWER('jan') LIKE '%'+LOWER(k.imie)+'%|%'+LOWER(k.nazwisko)+'%|%'+LOWER(k.adres)+'%|%'+LOWER(k.login)+'%';
+SELECT * FROM Hurtownia.dbo.klient AS k WHERE LOWER('jan') LIKE '%'+LOWER(k.imie)+'%|dsad';
+
+SELECT * FROM Hurtownia.dbo.klient AS k WHERE (LOWER(k.imie)=LOWER('') OR LOWER(k.nazwisko)=LOWER('') OR LOWER(k.adres)=LOWER('') OR LOWER(k.login)=LOWER(''));
+
+SELECT * FROM Hurtownia.dbo.sprzedaz AS s, Hurtownia.dbo.klient AS k WHERE s.klient_id=k.id;

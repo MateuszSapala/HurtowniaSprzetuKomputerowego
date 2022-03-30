@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HurtowniaSprzętuKomputerowego.model
 {
-    class PozycjaSprzedarzy
+    class PozycjaSprzedazy
     {
         public int Id { get; set; }
         public int SprzedazId { get; set; }
@@ -12,7 +12,7 @@ namespace HurtowniaSprzętuKomputerowego.model
         public int ZamowionaIlosc { get; set; }
         public decimal Wartosc { get; set; }
 
-        public PozycjaSprzedarzy(int id, int sprzedazId, int produktId, int zamowionaIlosc, decimal wartosc)
+        public PozycjaSprzedazy(int id, int sprzedazId, int produktId, int zamowionaIlosc, decimal wartosc)
         {
             Id = id;
             SprzedazId = sprzedazId;
