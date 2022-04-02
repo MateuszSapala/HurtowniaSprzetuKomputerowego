@@ -737,6 +737,7 @@ namespace HurtowniaSprzętuKomputerowego
             // 
             // textBoxInformacjeHaslo
             // 
+            this.textBoxInformacjeHaslo.Enabled = false;
             this.textBoxInformacjeHaslo.Location = new System.Drawing.Point(180, 220);
             this.textBoxInformacjeHaslo.Name = "textBoxInformacjeHaslo";
             this.textBoxInformacjeHaslo.Size = new System.Drawing.Size(246, 29);
@@ -744,6 +745,7 @@ namespace HurtowniaSprzętuKomputerowego
             // 
             // textBoxInformacjeLogin
             // 
+            this.textBoxInformacjeLogin.Enabled = false;
             this.textBoxInformacjeLogin.Location = new System.Drawing.Point(180, 170);
             this.textBoxInformacjeLogin.Name = "textBoxInformacjeLogin";
             this.textBoxInformacjeLogin.Size = new System.Drawing.Size(246, 29);
@@ -751,6 +753,7 @@ namespace HurtowniaSprzętuKomputerowego
             // 
             // textBoxInformacjeAdres
             // 
+            this.textBoxInformacjeAdres.Enabled = false;
             this.textBoxInformacjeAdres.Location = new System.Drawing.Point(180, 125);
             this.textBoxInformacjeAdres.Name = "textBoxInformacjeAdres";
             this.textBoxInformacjeAdres.Size = new System.Drawing.Size(246, 29);
@@ -758,6 +761,7 @@ namespace HurtowniaSprzętuKomputerowego
             // 
             // textBoxInformacjeNazwisko
             // 
+            this.textBoxInformacjeNazwisko.Enabled = false;
             this.textBoxInformacjeNazwisko.Location = new System.Drawing.Point(180, 81);
             this.textBoxInformacjeNazwisko.Name = "textBoxInformacjeNazwisko";
             this.textBoxInformacjeNazwisko.Size = new System.Drawing.Size(246, 29);
@@ -765,21 +769,25 @@ namespace HurtowniaSprzętuKomputerowego
             // 
             // buttonInformacjeZapisz
             // 
+            this.buttonInformacjeZapisz.Enabled = false;
             this.buttonInformacjeZapisz.Location = new System.Drawing.Point(346, 277);
             this.buttonInformacjeZapisz.Name = "buttonInformacjeZapisz";
             this.buttonInformacjeZapisz.Size = new System.Drawing.Size(80, 40);
             this.buttonInformacjeZapisz.TabIndex = 8;
             this.buttonInformacjeZapisz.Text = "Zapisz";
             this.buttonInformacjeZapisz.UseVisualStyleBackColor = true;
+            this.buttonInformacjeZapisz.Click += new System.EventHandler(this.buttonInformacjeZapisz_Click);
             // 
             // buttonInformacjeAnuluj
             // 
+            this.buttonInformacjeAnuluj.Enabled = false;
             this.buttonInformacjeAnuluj.Location = new System.Drawing.Point(180, 277);
             this.buttonInformacjeAnuluj.Name = "buttonInformacjeAnuluj";
             this.buttonInformacjeAnuluj.Size = new System.Drawing.Size(80, 40);
             this.buttonInformacjeAnuluj.TabIndex = 7;
             this.buttonInformacjeAnuluj.Text = "Anuluj";
             this.buttonInformacjeAnuluj.UseVisualStyleBackColor = true;
+            this.buttonInformacjeAnuluj.Click += new System.EventHandler(this.buttonInformacjeAnuluj_Click);
             // 
             // labelInformacjeNazwisko
             // 
@@ -798,9 +806,11 @@ namespace HurtowniaSprzętuKomputerowego
             this.buttonInformacjeEdytuj.TabIndex = 0;
             this.buttonInformacjeEdytuj.Text = "Edytuj";
             this.buttonInformacjeEdytuj.UseVisualStyleBackColor = true;
+            this.buttonInformacjeEdytuj.Click += new System.EventHandler(this.buttonInformacjeEdytuj_Click);
             // 
             // textBoxInformacjeImie
             // 
+            this.textBoxInformacjeImie.Enabled = false;
             this.textBoxInformacjeImie.Location = new System.Drawing.Point(180, 37);
             this.textBoxInformacjeImie.Name = "textBoxInformacjeImie";
             this.textBoxInformacjeImie.Size = new System.Drawing.Size(246, 29);

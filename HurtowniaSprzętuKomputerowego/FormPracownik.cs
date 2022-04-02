@@ -1,4 +1,5 @@
-﻿using HurtowniaSprzętuKomputerowego.db;
+﻿using HurtowniaSprzętuKomputerowego.common;
+using HurtowniaSprzętuKomputerowego.db;
 using HurtowniaSprzętuKomputerowego.model;
 using System;
 using System.Collections.Generic;
@@ -20,41 +21,27 @@ namespace HurtowniaSprzętuKomputerowego
             InitializeComponent();
             comboBoxProduktyDostawca.DisplayMember = "Nazwa";
             comboBoxProduktyDostawca.ValueMember = "Id";
+            zaladujDanePracownika();
             zaladujDostawcow();
             zaladujProdukty();
             zaladujKlientow();
             zaladujSprzedaz();
         }
 
-        private object pobierzWybranaWartoscKloumny(DataGridView data, string nazwaKolumny)
+        #region Pobieranie danych
+        private void zaladujDanePracownika()
         {
-            return data.SelectedRows[0].Cells[nazwaKolumny].Value;
-        }
-
-        private int pobierzWybranyId(DataGridView data)
-        {
-            if (data.SelectedRows.Count==0)
-            {
-                throw new Exception("Nie wybrano wiersza");
-            }
-            return Convert.ToInt32(data.SelectedRows[0].Cells["id"].Value);
-        }
-
-        private string pobierzWybranaKloumneString(DataGridView data, string nazwaKolumny)
-        {
-            return Convert.ToString(data.SelectedRows[0].Cells[nazwaKolumny].Value);
-        }
-
-        private int pobierzWybranaKloumneInt(DataGridView data, string nazwaKolumny)
-        {
-            return Convert.ToInt32(data.SelectedRows[0].Cells[nazwaKolumny].Value);
+            textBoxInformacjeImie.Text = zalogowanyPracownik.Imie;
+            textBoxInformacjeNazwisko.Text = zalogowanyPracownik.Nazwisko;
+            textBoxInformacjeAdres.Text = zalogowanyPracownik.Adres;
+            textBoxInformacjeLogin.Text = zalogowanyPracownik.Login;
         }
 
         private void zaladujDostawcow()
         {
             try
             {
-                DataTable dostawcy = PracownikRepository.PobierzDostawcow();
+                DataTable dostawcy = DostawcaRepository.PobierzDostawcow();
                 dataGridViewDostawcyListaDostawcow.DataSource = dostawcy;
                 comboBoxProduktyDostawca.Items.Clear();
                 foreach (DataRow row in dostawcy.Rows)
@@ -112,6 +99,7 @@ namespace HurtowniaSprzętuKomputerowego
             }
 
         }
+        #endregion
 
         #region Dostawca
         private void buttonDostawcyDodajDostawce_Click(object sender, EventArgs e)
@@ -120,7 +108,7 @@ namespace HurtowniaSprzętuKomputerowego
             {
                 string nazwaDostawcy = textBoxDostawcyNazwaDostawcy.Text;
                 string informacjeDodatkowe = textBoxDostawcyInformacjeDodatkowe.Text;
-                PracownikRepository.DodajDostawce(nazwaDostawcy, informacjeDodatkowe);
+                DostawcaRepository.DodajDostawce(nazwaDostawcy, informacjeDodatkowe);
                 zaladujDostawcow();
             }
             catch (Exception ex)
@@ -133,10 +121,10 @@ namespace HurtowniaSprzętuKomputerowego
         {
             try
             {
-                int id = pobierzWybranyId(dataGridViewDostawcyListaDostawcow);
+                int id = DataGridViewUtil.pobierzWybranyId(dataGridViewDostawcyListaDostawcow);
                 string nazwaDostawcy = textBoxDostawcyNazwaDostawcy.Text;
                 string informacjeDodatkowe = textBoxDostawcyInformacjeDodatkowe.Text;
-                PracownikRepository.EdytujDostawce(id, nazwaDostawcy, informacjeDodatkowe);
+                DostawcaRepository.EdytujDostawce(id, nazwaDostawcy, informacjeDodatkowe);
                 zaladujDostawcow();
             }
             catch (Exception ex)
@@ -149,8 +137,8 @@ namespace HurtowniaSprzętuKomputerowego
         {
             try
             {
-                int id = pobierzWybranyId(dataGridViewDostawcyListaDostawcow);
-                PracownikRepository.UsunDostawce(id);
+                int id = DataGridViewUtil.pobierzWybranyId(dataGridViewDostawcyListaDostawcow);
+                DostawcaRepository.UsunDostawce(id);
                 zaladujDostawcow();
             }
             catch(Exception ex)
@@ -162,9 +150,9 @@ namespace HurtowniaSprzętuKomputerowego
         private void dataGridViewDostawcyListaDostawcow_SelectionChanged(object sender, EventArgs e)
         {
             if (dataGridViewDostawcyListaDostawcow.SelectedRows.Count == 0) return;
-            int id = pobierzWybranyId(dataGridViewDostawcyListaDostawcow);
-            textBoxDostawcyNazwaDostawcy.Text = pobierzWybranaKloumneString(dataGridViewDostawcyListaDostawcow, "nazwa");
-            textBoxDostawcyInformacjeDodatkowe.Text = pobierzWybranaKloumneString(dataGridViewDostawcyListaDostawcow, "informacje_dodatkowe");
+            int id = DataGridViewUtil.pobierzWybranyId(dataGridViewDostawcyListaDostawcow);
+            textBoxDostawcyNazwaDostawcy.Text = DataGridViewUtil.pobierzWybranaKloumneString(dataGridViewDostawcyListaDostawcow, "nazwa");
+            textBoxDostawcyInformacjeDodatkowe.Text = DataGridViewUtil.pobierzWybranaKloumneString(dataGridViewDostawcyListaDostawcow, "informacje_dodatkowe");
             dataGridViewDostawcyProduktyOferowanePrzezDostawce.DataSource = ProduktRepository.PobierzProdukty(id);
         }
 
@@ -192,7 +180,7 @@ namespace HurtowniaSprzętuKomputerowego
         {
             try
             {
-                int id = pobierzWybranyId(dataGridViewProduktyListaProduktow);
+                int id = DataGridViewUtil.pobierzWybranyId(dataGridViewProduktyListaProduktow);
                 int dostawcaId = ((Dostawca)comboBoxProduktyDostawca.SelectedItem).Id;
                 string nazwaSprzetu = textBoxProduktyNazwaProduktu.Text;
                 string informacjeDodatkowe = textBoxProduktyInformacjeDodatkowe.Text;
@@ -210,7 +198,7 @@ namespace HurtowniaSprzętuKomputerowego
         {
             try
             {
-                int id = pobierzWybranyId(dataGridViewProduktyListaProduktow);
+                int id = DataGridViewUtil.pobierzWybranyId(dataGridViewProduktyListaProduktow);
                 ProduktRepository.UsunProdukt(id);
                 zaladujProdukty();
             }
@@ -223,7 +211,7 @@ namespace HurtowniaSprzętuKomputerowego
         private void dataGridViewProduktyListaProduktow_SelectionChanged(object sender, EventArgs e)
         {
             if (dataGridViewProduktyListaProduktow.SelectedRows.Count == 0) return;
-            int dostawcaId = pobierzWybranaKloumneInt(dataGridViewProduktyListaProduktow, "dostawca_id");
+            int dostawcaId = DataGridViewUtil.pobierzWybranaKloumneInt(dataGridViewProduktyListaProduktow, "dostawca_id");
             foreach (Dostawca dostawca in comboBoxProduktyDostawca.Items)
             {
                 if(dostawca.Id == dostawcaId)
@@ -231,9 +219,9 @@ namespace HurtowniaSprzętuKomputerowego
                     comboBoxProduktyDostawca.SelectedItem = dostawca;
                 }
             }
-            textBoxProduktyNazwaProduktu.Text = pobierzWybranaKloumneString(dataGridViewProduktyListaProduktow, "nazwa_sprzetu");
-            textBoxDostawcyInformacjeDodatkowe.Text = pobierzWybranaKloumneString(dataGridViewProduktyListaProduktow, "informacje_dodatkowe");
-            numericUpDownProduktyCenaJednostkowa.Value = Convert.ToDecimal(pobierzWybranaWartoscKloumny(dataGridViewProduktyListaProduktow, "cena_jednostkowa"));
+            textBoxProduktyNazwaProduktu.Text = DataGridViewUtil.pobierzWybranaKloumneString(dataGridViewProduktyListaProduktow, "nazwa_sprzetu");
+            textBoxProduktyInformacjeDodatkowe.Text = DataGridViewUtil.pobierzWybranaKloumneString(dataGridViewProduktyListaProduktow, "informacje_dodatkowe");
+            numericUpDownProduktyCenaJednostkowa.Value = Convert.ToDecimal(DataGridViewUtil.pobierzWybranaWartoscKloumny(dataGridViewProduktyListaProduktow, "cena_jednostkowa"));
         }
         #endregion
 
@@ -247,19 +235,74 @@ namespace HurtowniaSprzętuKomputerowego
         {
             try
             {
-                dataGridViewKlienciKupnaKlienta.DataSource = SprzedazRepository.PobierzSprzedaze(pobierzWybranyId(dataGridViewKlienciListaKlientow));
+                dataGridViewKlienciKupnaKlienta.DataSource = SprzedazRepository.PobierzSprzedaze(DataGridViewUtil.pobierzWybranyId(dataGridViewKlienciListaKlientow));
             }
             catch (Exception ex) { }
         }
         #endregion
 
+        #region Sprzedaże
         private void dataGridViewSprzedazeSprzedaze_SelectionChanged(object sender, EventArgs e)
         {
             try
             {
-                dataGridViewSprzedazeKupioneProdukty.DataSource = PozycjaSprzedazyRepository.PobierzPozycje(pobierzWybranyId(dataGridViewSprzedazeSprzedaze));
+                dataGridViewSprzedazeKupioneProdukty.DataSource = PozycjaSprzedazyRepository.PobierzPozycje(DataGridViewUtil.pobierzWybranyId(dataGridViewSprzedazeSprzedaze));
             }
             catch (Exception ex) { }
         }
+        #endregion
+
+        #region Informacje
+        private void buttonyInformacjeEnable(bool edytuj, bool anuluj, bool zapisz)
+        {
+            buttonInformacjeEdytuj.Enabled = edytuj;
+            buttonInformacjeAnuluj.Enabled = anuluj;
+            buttonInformacjeZapisz.Enabled = zapisz;
+        }
+
+        private void textBoxesInformacjeEnable(bool enable)
+        {
+            textBoxInformacjeImie.Enabled = enable;
+            textBoxInformacjeNazwisko.Enabled = enable;
+            textBoxInformacjeAdres.Enabled = enable;
+            textBoxInformacjeLogin.Enabled = enable;
+            textBoxInformacjeHaslo.Enabled = enable;
+        }
+
+
+        private void buttonInformacjeEdytuj_Click(object sender, EventArgs e)
+        {
+            buttonyInformacjeEnable(false, true, true);
+            textBoxesInformacjeEnable(true);
+        }
+
+        private void buttonInformacjeAnuluj_Click(object sender, EventArgs e)
+        {
+            textBoxesInformacjeEnable(false);
+            zaladujDanePracownika();
+            buttonyInformacjeEnable(true, false, false);
+        }
+
+        private void buttonInformacjeZapisz_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = zalogowanyPracownik.Id;
+                string imie = textBoxInformacjeImie.Text;
+                string nazwisko = textBoxInformacjeNazwisko.Text;
+                string adres = textBoxInformacjeAdres.Text;
+                string login = textBoxInformacjeLogin.Text;
+                string haslo = textBoxInformacjeHaslo.Text;
+                zalogowanyPracownik = PracownikRepository.EdytujPracownika(id, imie, nazwisko, adres, login, haslo);
+                zaladujDanePracownika();
+                buttonyInformacjeEnable(true, false, false);
+                textBoxesInformacjeEnable(false);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        #endregion
     }
 }

@@ -9,60 +9,26 @@ namespace HurtowniaSprzętuKomputerowego.db
 {
     static class PracownikRepository
     {
-        private const string tabela = "Hurtownia.dbo.dostawca";
+        private const string tabela = "Hurtownia.dbo.pracownik";
 
-        public static void DodajDostawce(string nazwa, string informacjeDodatkowe)
-        {
-            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM "+tabela+" WHERE 0=1;"))
-            {
-                DataTable dataTable = new DataTable();
-                dataAdapter.Fill(dataTable);
-
-                DataRow dostawca = dataTable.NewRow();
-                dostawca["nazwa"] = nazwa;
-                dostawca["informacje_dodatkowe"] = informacjeDodatkowe;
-                dataTable.Rows.Add(dostawca);
-
-                new SqlCommandBuilder(dataAdapter);
-                dataAdapter.Update(dataTable);
-            }
-        }
-
-        public static void EdytujDostawce(int id, string nazwa, string informacjeDodatkowe)
+        public static Pracownik EdytujPracownika(int id, string imie, string nazwisko, string adres, string login, string haslo)
         {
             using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM "+tabela+" WHERE id=@id;", new List<SqlParameter> { new SqlParameter("@id", id) }))
             {
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
 
-                DataRow dostawca = dataTable.Rows[0];
-                dostawca["nazwa"] = nazwa;
-                dostawca["informacje_dodatkowe"] = informacjeDodatkowe;
+                DataRow pracownik = dataTable.Rows[0];
+                pracownik["imie"] = imie;
+                pracownik["nazwisko"] = nazwisko;
+                pracownik["adres"] = adres;
+                pracownik["login"] = login;
+                pracownik["haslo"] = haslo;
 
                 new SqlCommandBuilder(dataAdapter);
                 dataAdapter.Update(dataTable);
-            }
-        }
 
-        public static DataTable PobierzDostawcow()
-        {
-            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM "+tabela))
-            {
-                DataTable dataTable = new DataTable();
-                dataAdapter.Fill(dataTable);
-                return dataTable;
-            }
-        }
-
-        public static void UsunDostawce(int id)
-        {
-            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM "+tabela+" WHERE id=@id;", new List<SqlParameter> { new SqlParameter("@id", id) }))
-            {
-                DataTable dataTable = new DataTable();
-                dataAdapter.Fill(dataTable);
-                dataTable.Rows[0].Delete();
-                new SqlCommandBuilder(dataAdapter);
-                dataAdapter.Update(dataTable);
+                return new Pracownik(id, imie, nazwisko, adres, login, haslo);
             }
         }
     }
