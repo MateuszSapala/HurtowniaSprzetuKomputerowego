@@ -740,6 +740,7 @@ namespace HurtowniaSprzętuKomputerowego
             this.textBoxInformacjeHaslo.Enabled = false;
             this.textBoxInformacjeHaslo.Location = new System.Drawing.Point(180, 220);
             this.textBoxInformacjeHaslo.Name = "textBoxInformacjeHaslo";
+            this.textBoxInformacjeHaslo.PasswordChar = '*';
             this.textBoxInformacjeHaslo.Size = new System.Drawing.Size(246, 29);
             this.textBoxInformacjeHaslo.TabIndex = 12;
             // 

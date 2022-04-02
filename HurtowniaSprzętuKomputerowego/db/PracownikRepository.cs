@@ -23,7 +23,7 @@ namespace HurtowniaSprzętuKomputerowego.db
                 pracownik["nazwisko"] = nazwisko;
                 pracownik["adres"] = adres;
                 pracownik["login"] = login;
-                pracownik["haslo"] = haslo;
+                pracownik["haslo"] = Common.encryptPassword(haslo);
 
                 new SqlCommandBuilder(dataAdapter);
                 dataAdapter.Update(dataTable);

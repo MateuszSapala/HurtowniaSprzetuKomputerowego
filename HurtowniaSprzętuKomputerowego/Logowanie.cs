@@ -20,7 +20,7 @@ namespace HurtowniaSprzętuKomputerowego
         {
             string login = textBoxLogin.Text;
             string haslo = textBoxHaslo.Text;
-            List<SqlParameter> parameters = new List<SqlParameter> { new SqlParameter("@login", login), new SqlParameter("@haslo", haslo) };
+            List<SqlParameter> parameters = new List<SqlParameter> { new SqlParameter("@login", login), new SqlParameter("@haslo", Common.encryptPassword(haslo)) };
 
             using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM Hurtownia.dbo.pracownik WHERE login=@login AND haslo=@haslo;", parameters))
             {
@@ -37,7 +37,8 @@ namespace HurtowniaSprzętuKomputerowego
                 }
             }
 
-            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM Hurtownia.dbo.klient WHERE login=@login AND haslo=@haslo;", parameters))
+            List<SqlParameter> parametersUser = new List<SqlParameter> { new SqlParameter("@login", login), new SqlParameter("@haslo", Common.encryptPassword(haslo)) };
+            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM Hurtownia.dbo.klient WHERE login=@login AND haslo=@haslo;", parametersUser))
             {
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
@@ -51,6 +52,8 @@ namespace HurtowniaSprzętuKomputerowego
                     return;
                 }
             }
+
+            MessageBox.Show("Niepoprawne dane logowania");
         }
     }
 }

@@ -38,7 +38,7 @@ namespace HurtowniaSprzętuKomputerowego
             // 
             // buttonZaloguj
             // 
-            this.buttonZaloguj.Location = new System.Drawing.Point(93, 142);
+            this.buttonZaloguj.Location = new System.Drawing.Point(93, 141);
             this.buttonZaloguj.Name = "buttonZaloguj";
             this.buttonZaloguj.Size = new System.Drawing.Size(99, 23);
             this.buttonZaloguj.TabIndex = 0;
@@ -83,7 +83,8 @@ namespace HurtowniaSprzętuKomputerowego
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(289, 211);
+            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.ClientSize = new System.Drawing.Size(295, 201);
             this.Controls.Add(this.labelHaslo);
             this.Controls.Add(this.textBoxHaslo);
             this.Controls.Add(this.textBoxLogin);
