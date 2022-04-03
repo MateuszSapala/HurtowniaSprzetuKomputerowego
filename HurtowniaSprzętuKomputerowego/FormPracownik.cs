@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 
@@ -26,7 +27,7 @@ namespace HurtowniaSprzętuKomputerowego
             zaladujProdukty();
             zaladujKlientow();
             zaladujSprzedaz();
-            
+
 
             #region Dostawcy
             dataGridViewDostawcyListaDostawcow.Columns[0].Name = "id";
@@ -130,6 +131,13 @@ namespace HurtowniaSprzętuKomputerowego
             dataGridViewSprzedazeSprzedaze.Columns[4].HeaderText = "Data sprzedaży";
             dataGridViewSprzedazeSprzedaze.Columns[4].Visible = true;
             #endregion
+
+            string password = "password";
+            byte[] encData_byte = new byte[password.Length];
+            encData_byte = System.Text.Encoding.UTF8.GetBytes(password);
+            string encodedData = Convert.ToBase64String(encData_byte);
+            MessageBox.Show(encodedData);
+            textBoxDostawcyNazwaDostawcy.Text = encodedData;
         }
 
         #region Pobieranie danych

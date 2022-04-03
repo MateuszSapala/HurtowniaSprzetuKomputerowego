@@ -21,7 +21,7 @@ namespace HurtowniaSprzętuKomputerowego
             string login = textBoxLogin.Text;
             string haslo = textBoxHaslo.Text;
             List<SqlParameter> parameters = new List<SqlParameter> { new SqlParameter("@login", login), new SqlParameter("@haslo", Common.encryptPassword(haslo)) };
-
+            MessageBox.Show(Common.encryptPassword(haslo));
             using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM Hurtownia.dbo.pracownik WHERE login=@login AND haslo=@haslo;", parameters))
             {
                 DataTable dataTable = new DataTable();

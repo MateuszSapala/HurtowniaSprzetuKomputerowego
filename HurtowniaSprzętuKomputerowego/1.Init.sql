@@ -60,7 +60,7 @@ CREATE TABLE Hurtownia.dbo.pracownik(
 );
 
 --Dodanie przyk³adowych danych
-INSERT INTO Hurtownia.dbo.pracownik (imie, nazwisko, adres, login, haslo) VALUES ('Mateusz', 'Sapa³a', 'Adres', 'admin', 'pass');
+INSERT INTO Hurtownia.dbo.pracownik (imie, nazwisko, adres, login, haslo) VALUES ('Mateusz', 'Sapa³a', 'Adres', 'admin', 'cGFzc3dvcmQ=');
 INSERT INTO Hurtownia.dbo.klient (imie, nazwisko, adres, login, haslo) VALUES ('Jan', 'Nowak', 'Adres', 'user', 'pass');
 INSERT INTO Hurtownia.dbo.klient (imie, nazwisko, adres, login, haslo) VALUES ('Adam', 'Nowak', 'Adres2', 'user2', 'pass');
 INSERT INTO Hurtownia.dbo.klient (imie, nazwisko, adres, login, haslo) VALUES ('Tomasz', 'Kowalski', 'Adres3', 'user3', 'pass');
