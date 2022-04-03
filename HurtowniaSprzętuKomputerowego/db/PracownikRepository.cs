@@ -13,22 +13,18 @@ namespace HurtowniaSprzętuKomputerowego.db
 
         public static Pracownik EdytujPracownika(int id, string imie, string nazwisko, string adres, string login, string haslo)
         {
-            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM "+tabela+" WHERE id=@id;", new List<SqlParameter> { new SqlParameter("@id", id) }))
+            using(SqlConnection connection = DbConnection.getConnection())
             {
-                DataTable dataTable = new DataTable();
-                dataAdapter.Fill(dataTable);
-
-                DataRow pracownik = dataTable.Rows[0];
-                pracownik["imie"] = imie;
-                pracownik["nazwisko"] = nazwisko;
-                pracownik["adres"] = adres;
-                pracownik["login"] = login;
-                pracownik["haslo"] = Common.encryptPassword(haslo);
-
-                new SqlCommandBuilder(dataAdapter);
-                dataAdapter.Update(dataTable);
-
-                return new Pracownik(id, imie, nazwisko, adres, login, haslo);
+                connection.Open();
+                SqlCommand command = new SqlCommand("UPDATE "+tabela+ " SET imie=@imie, nazwisko=@nazwisko, adres=@adres, login=@login, haslo=HASHBYTES('SHA2_512', '"+haslo+"') WHERE id=@id", connection);
+                command.Parameters.Add(new SqlParameter("@id", id));
+                command.Parameters.Add(new SqlParameter("@imie", imie));
+                command.Parameters.Add(new SqlParameter("@nazwisko", nazwisko));
+                command.Parameters.Add(new SqlParameter("@adres", adres));
+                command.Parameters.Add(new SqlParameter("@login", login));
+                command.ExecuteNonQuery();
+                connection.Close();
+                return new Pracownik(id, imie, nazwisko, adres, login, "");
             }
         }
     }

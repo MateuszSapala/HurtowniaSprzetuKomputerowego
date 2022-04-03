@@ -20,15 +20,14 @@ namespace HurtowniaSprzętuKomputerowego
         {
             string login = textBoxLogin.Text;
             string haslo = textBoxHaslo.Text;
-            List<SqlParameter> parameters = new List<SqlParameter> { new SqlParameter("@login", login), new SqlParameter("@haslo", Common.encryptPassword(haslo)) };
-            MessageBox.Show(Common.encryptPassword(haslo));
-            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM Hurtownia.dbo.pracownik WHERE login=@login AND haslo=@haslo;", parameters))
+
+            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM Hurtownia.dbo.pracownik WHERE login='" + login + "' AND haslo=HashBytes('SHA2_512', '" + haslo + "');"))
             {
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
                 foreach (DataRow row in dataTable.Rows)
                 {
-                    Pracownik pracownik = new Pracownik(row.Field<int>("id"), row.Field<string>("imie"), row.Field<string>("nazwisko"), row.Field<string>("adres"), row.Field<string>("login"), row.Field<string>("haslo"));
+                    Pracownik pracownik = new Pracownik(row.Field<int>("id"), row.Field<string>("imie"), row.Field<string>("nazwisko"), row.Field<string>("adres"), row.Field<string>("login"), "");
                     FormPracownik formPracownik = new FormPracownik(pracownik);
                     formPracownik.FormClosed += (s, args) => Close();
                     formPracownik.Show();
@@ -37,14 +36,13 @@ namespace HurtowniaSprzętuKomputerowego
                 }
             }
 
-            List<SqlParameter> parametersUser = new List<SqlParameter> { new SqlParameter("@login", login), new SqlParameter("@haslo", Common.encryptPassword(haslo)) };
-            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM Hurtownia.dbo.klient WHERE login=@login AND haslo=@haslo;", parametersUser))
+            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM Hurtownia.dbo.klient WHERE login='" + login + "' AND haslo=HashBytes('SHA2_512', '" + haslo + "');"))
             {
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
                 foreach (DataRow row in dataTable.Rows)
                 {
-                    Klient klient = new Klient(row.Field<int>("id"), row.Field<string>("imie"), row.Field<string>("nazwisko"), row.Field<string>("adres"), row.Field<string>("login"), row.Field<string>("haslo"));
+                    Klient klient = new Klient(row.Field<int>("id"), row.Field<string>("imie"), row.Field<string>("nazwisko"), row.Field<string>("adres"), row.Field<string>("login"), "");
                     FormKlient formKlient = new FormKlient(klient);
                     formKlient.FormClosed += (s, args) => Close();
                     formKlient.Show();
