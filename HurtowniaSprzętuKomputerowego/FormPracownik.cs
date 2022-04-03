@@ -516,5 +516,10 @@ namespace HurtowniaSprzętuKomputerowego
             }
         }
         #endregion
+
+        private void FormPracownik_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

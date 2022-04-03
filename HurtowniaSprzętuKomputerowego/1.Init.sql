@@ -35,7 +35,7 @@ CREATE TABLE Hurtownia.dbo.klient(
 );
 
 CREATE TABLE Hurtownia.dbo.sprzedaz(
-	id INT IDENTITY(1,1) PRIMARY KEY,
+	id INT PRIMARY KEY,
 	klient_id INT FOREIGN KEY REFERENCES Hurtownia.dbo.klient(id),
 	status INT NOT NULL CHECK (status BETWEEN 0 AND 3),
 	suma MONEY NOT NULL,
@@ -68,7 +68,7 @@ INSERT INTO Hurtownia.dbo.klient (imie, nazwisko, adres, login, haslo) VALUES ('
 SELECT HashBytes('SHA2_512', 'pass') AS pass;
 SELECT TYPE_NAME(HashBytes('SHA2_512', 'pass')) AS pass;
 
-INSERT INTO Hurtownia.dbo.sprzedaz (klient_id, status, suma, data_sprzedazy) VALUES (1, 1, 2, GETDATE());
+INSERT INTO Hurtownia.dbo.sprzedaz (id,klient_id, status, suma, data_sprzedazy) VALUES (1,1, 1, 2, GETDATE());
 INSERT INTO Hurtownia.dbo.pozycja_sprzedazy (sprzedaz_id, produkt_id, zamowiona_ilosc, wartosc) VALUES (1, 8, 2, 200);
 
 --Pobieranie danych

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace HurtowniaSprzętuKomputerowego.db
 {
@@ -18,6 +19,48 @@ namespace HurtowniaSprzętuKomputerowego.db
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
                 return dataTable;
+            }
+        }
+
+        public static int PobierzMaxIdSprzedazy()
+        {
+            int maxId = 0;
+            try
+            {
+                using (SqlConnection cnz = DbConnection.getConnection())
+                {
+                    SqlCommand cmdzs = new SqlCommand("SELECT MAX(id) FROM sprzedaz ", cnz);
+                    cmdzs.CommandType = CommandType.Text;
+                    cmdzs.Connection.Open();
+                    maxId= Convert.ToInt32(cmdzs.ExecuteScalar());
+                }
+               
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            } 
+            
+            return maxId;
+        }
+
+        public static void DodajSprzedaz(int id, int klientId, int statusSprzedazy,decimal suma, DateTime dataSprzedazy)
+        {
+            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM " + tabela + " WHERE 0=1;"))
+            {
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+
+                DataRow sprzedaz = dataTable.NewRow();
+                sprzedaz["id"] = id;
+                sprzedaz["klient_id"] = klientId;
+                sprzedaz["status"] = statusSprzedazy;
+                sprzedaz["suma"] = suma;
+                sprzedaz["data_sprzedazy"] = dataSprzedazy; 
+                dataTable.Rows.Add(sprzedaz);
+
+                new SqlCommandBuilder(dataAdapter);
+                dataAdapter.Update(dataTable);
             }
         }
 

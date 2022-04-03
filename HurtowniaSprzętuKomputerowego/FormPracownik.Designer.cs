@@ -65,6 +65,7 @@ namespace HurtowniaSprzętuKomputerowego
             this.groupBoxProduktyOferowanePrzezDostawce = new System.Windows.Forms.GroupBox();
             this.dataGridViewDostawcyProduktyOferowanePrzezDostawce = new System.Windows.Forms.DataGridView();
             this.groupBoxDostawcaSzczegoly = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.buttonDostawcyUsunDostawce = new System.Windows.Forms.Button();
             this.buttonDostawcyEdytujDostawce = new System.Windows.Forms.Button();
             this.textBoxDostawcyInformacjeDodatkowe = new System.Windows.Forms.TextBox();
@@ -553,6 +554,7 @@ namespace HurtowniaSprzętuKomputerowego
             // 
             // groupBoxDostawcaSzczegoly
             // 
+            this.groupBoxDostawcaSzczegoly.Controls.Add(this.button1);
             this.groupBoxDostawcaSzczegoly.Controls.Add(this.buttonDostawcyUsunDostawce);
             this.groupBoxDostawcaSzczegoly.Controls.Add(this.buttonDostawcyEdytujDostawce);
             this.groupBoxDostawcaSzczegoly.Controls.Add(this.textBoxDostawcyInformacjeDodatkowe);
@@ -566,6 +568,15 @@ namespace HurtowniaSprzętuKomputerowego
             this.groupBoxDostawcaSzczegoly.TabIndex = 4;
             this.groupBoxDostawcaSzczegoly.TabStop = false;
             this.groupBoxDostawcaSzczegoly.Text = "Dostawca";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(128, 25);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(8, 8);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // buttonDostawcyUsunDostawce
             // 
@@ -835,6 +846,7 @@ namespace HurtowniaSprzętuKomputerowego
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormPracownik";
             this.Text = "Pracownik";
+            this.Load += new System.EventHandler(this.FormPracownik_Load);
             this.tabPageSprzedaze.ResumeLayout(false);
             this.splitContainerSprzedaze.Panel1.ResumeLayout(false);
             this.splitContainerSprzedaze.Panel2.ResumeLayout(false);
@@ -946,5 +958,6 @@ namespace HurtowniaSprzętuKomputerowego
         private System.Windows.Forms.Button buttonKlienciSzukaj;
         private System.Windows.Forms.TextBox textBoxKlienciFiltr;
         private System.Windows.Forms.Label labelKlienciFiltry;
+        private System.Windows.Forms.Button button1;
     }
 }
