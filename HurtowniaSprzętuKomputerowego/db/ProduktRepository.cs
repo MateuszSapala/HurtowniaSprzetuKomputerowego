@@ -60,6 +60,16 @@ namespace HurtowniaSprzętuKomputerowego.db
             }
         }
 
+        public static DataTable PobierzProduktyTabelaKlient()
+        {
+            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT p.id, p.nazwa_sprzetu as nazwa_sprzetu, p.cena_jednostkowa as cena_za_1_szt,  p.informacje_dodatkowe FROM " + tabela + " AS p;"))
+            {
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+                return dataTable;
+            }
+        }
+
         public static DataTable PobierzProdukty(int dostawcaId)
         {
             using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT p.id, d.nazwa, p.nazwa_sprzetu, p.informacje_dodatkowe, p.cena_jednostkowa, d.id AS dostawca_id FROM " + tabela + " AS p, Hurtownia.dbo.dostawca AS d WHERE p.dostawca_id=d.id AND d.id=@dostawcaId;", 
