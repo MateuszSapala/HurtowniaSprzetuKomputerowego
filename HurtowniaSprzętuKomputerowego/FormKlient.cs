@@ -26,6 +26,17 @@ namespace HurtowniaSprzętuKomputerowego
         {
             ZaladujProdukty();
             DodajKolumneDoListy();
+            ZaladujDeneZalowowanegoKlienta();
+        }
+
+        private void ZaladujDeneZalowowanegoKlienta()
+        {
+            textBoxNazwisko.Text = zalogowanyKlient.Nazwisko;
+            textBoxImie.Text = zalogowanyKlient.Imie;
+            textBoxAdres.Text = zalogowanyKlient.Adres;
+            textBoxLogin.Text = zalogowanyKlient.Login;
+            textBoxHaslo.Text = "";
+
         }
 
         private void ZaladujProdukty()
@@ -254,6 +265,47 @@ namespace HurtowniaSprzętuKomputerowego
                 wartoscZamowienia += pozycja.Wartosc;
             }
             return wartoscZamowienia;
+        }
+
+        private void zmienStanEdycjiDanych(bool czyWlaczone)
+        {
+            buttonEdytuj.Enabled = !czyWlaczone;
+            buttonAnuluj.Enabled = czyWlaczone;
+            buttonZapisz.Enabled = czyWlaczone;
+            textBoxAdres.Enabled = czyWlaczone;
+            textBoxLogin.Enabled = czyWlaczone;
+            textBoxHaslo.Enabled = czyWlaczone;
+        }
+
+        private void buttonEdytuj_Click(object sender, EventArgs e)
+        {
+            zmienStanEdycjiDanych(true);
+        }
+
+        private void buttonAnuluj_Click(object sender, EventArgs e)
+        {
+            zmienStanEdycjiDanych(false);
+            ZaladujDeneZalowowanegoKlienta();
+        }
+
+        private void buttonZapisz_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = zalogowanyKlient.Id;
+                string imie = textBoxImie.Text;
+                string nazwisko = textBoxNazwisko.Text;
+                string adres = textBoxAdres.Text;
+                string login = textBoxLogin.Text;
+                string haslo = textBoxHaslo.Text;
+                zalogowanyKlient = KlientRepository.EdytujKlienta(id, imie, nazwisko, adres, login, haslo);
+                zmienStanEdycjiDanych(false);
+                ZaladujDeneZalowowanegoKlienta();
+
+            } catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

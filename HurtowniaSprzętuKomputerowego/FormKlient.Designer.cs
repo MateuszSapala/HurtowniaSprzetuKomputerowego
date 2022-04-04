@@ -520,6 +520,7 @@ namespace HurtowniaSprzętuKomputerowego
             this.buttonZapisz.TabIndex = 8;
             this.buttonZapisz.Text = "Zapisz";
             this.buttonZapisz.UseVisualStyleBackColor = true;
+            this.buttonZapisz.Click += new System.EventHandler(this.buttonZapisz_Click);
             // 
             // buttonAnuluj
             // 
@@ -530,6 +531,7 @@ namespace HurtowniaSprzętuKomputerowego
             this.buttonAnuluj.TabIndex = 7;
             this.buttonAnuluj.Text = "Anuluj";
             this.buttonAnuluj.UseVisualStyleBackColor = true;
+            this.buttonAnuluj.Click += new System.EventHandler(this.buttonAnuluj_Click);
             // 
             // labelInformacjeNazwisko
             // 
@@ -548,6 +550,7 @@ namespace HurtowniaSprzętuKomputerowego
             this.buttonEdytuj.TabIndex = 0;
             this.buttonEdytuj.Text = "Edytuj";
             this.buttonEdytuj.UseVisualStyleBackColor = true;
+            this.buttonEdytuj.Click += new System.EventHandler(this.buttonEdytuj_Click);
             // 
             // textBoxImie
             // 
