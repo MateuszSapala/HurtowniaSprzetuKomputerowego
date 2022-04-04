@@ -53,7 +53,7 @@ namespace HurtowniaSprzętuKomputerowego
             }
 
         }
-       
+
 
         private void ZaladujSprzedazeKlienta()
         {
@@ -63,10 +63,10 @@ namespace HurtowniaSprzętuKomputerowego
                 DataTable data = SprzedazRepository.PobierzSprzedaze(zalogowanyKlient.Id);
                 EnumsTranformers.TransformSprzedazDataTable(data);
                 dataGridViewHistoriaSprzedazy.DataSource = data;
-               
+
                 dataGridViewSprzedazeKupioneProdukty.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
                 dataGridViewHistoriaSprzedazy.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-                
+
 
                 dataGridViewHistoriaSprzedazy.Columns[0].Name = "id";
                 dataGridViewHistoriaSprzedazy.Columns[0].DataPropertyName = "id";
@@ -232,7 +232,7 @@ namespace HurtowniaSprzętuKomputerowego
                 }
             }
         }
-        
+
         private void buttonUsunZKoszyka_Click(object sender, EventArgs e)
         {
             try
@@ -258,11 +258,11 @@ namespace HurtowniaSprzętuKomputerowego
         {
             try
             {
-               
+
 
                 int idSprzedazy = SprzedazRepository.PobierzMaxIdSprzedazy() + 1;
-                List<PozycjaSprzedazy> pozycjeSprzedazy = StworzPozycje(idSprzedazy); 
-                if (pozycjeSprzedazy.Count==0)
+                List<PozycjaSprzedazy> pozycjeSprzedazy = StworzPozycje(idSprzedazy);
+                if (pozycjeSprzedazy.Count == 0)
                 {
                     MessageBox.Show("Brak produktów w koszyku");
                     return;
@@ -278,9 +278,9 @@ namespace HurtowniaSprzętuKomputerowego
             {
                 MessageBox.Show(ex.Message);
             }
-                
-       
-          
+
+
+
         }
 
 
@@ -290,7 +290,7 @@ namespace HurtowniaSprzętuKomputerowego
             foreach (var item in listBoxKoszyk.Items)
             {
                 if (item.GetType().Equals(typeof(Produkt)))
-                    {
+                {
                     var produkt = (Produkt)item;
                     pozycjeSprzedazy.Add(new PozycjaSprzedazy(maxIdSprzedazy, produkt.Id, produkt.Ilosc, produkt.Ilosc * produkt.CenaJednostkowa));
                 }
@@ -301,7 +301,7 @@ namespace HurtowniaSprzętuKomputerowego
             return pozycjeSprzedazy;
 
 
-           
+
         }
 
         private decimal policzWartośćProduktów(List<PozycjaSprzedazy> pozycjeSprzedazy)
@@ -370,50 +370,53 @@ namespace HurtowniaSprzętuKomputerowego
                 dataGridViewSprzedazeKupioneProdukty.Columns[9].DataPropertyName = "cena_jednostkowa";
                 dataGridViewSprzedazeKupioneProdukty.Columns[9].HeaderText = "Cena";
                 dataGridViewSprzedazeKupioneProdukty.Columns[9].Visible = false;
-               
+
             }
-            catch (Exception ex) { }
-
-        private void zmienStanEdycjiDanych(bool czyWlaczone)
-        {
-            buttonEdytuj.Enabled = !czyWlaczone;
-            buttonAnuluj.Enabled = czyWlaczone;
-            buttonZapisz.Enabled = czyWlaczone;
-            textBoxAdres.Enabled = czyWlaczone;
-            textBoxLogin.Enabled = czyWlaczone;
-            textBoxHaslo.Enabled = czyWlaczone;
-        }
-
-        private void buttonEdytuj_Click(object sender, EventArgs e)
-        {
-            zmienStanEdycjiDanych(true);
-        }
-
-        private void buttonAnuluj_Click(object sender, EventArgs e)
-        {
-            zmienStanEdycjiDanych(false);
-            ZaladujDeneZalowowanegoKlienta();
-        }
-
-        private void buttonZapisz_Click(object sender, EventArgs e)
-        {
-            try
+            catch (Exception ex)
             {
-                int id = zalogowanyKlient.Id;
-                string imie = textBoxImie.Text;
-                string nazwisko = textBoxNazwisko.Text;
-                string adres = textBoxAdres.Text;
-                string login = textBoxLogin.Text;
-                string haslo = textBoxHaslo.Text;
-                zalogowanyKlient = KlientRepository.EdytujKlienta(id, imie, nazwisko, adres, login, haslo);
+            }
+        }
+
+            private void zmienStanEdycjiDanych(bool czyWlaczone)
+            {
+                buttonEdytuj.Enabled = !czyWlaczone;
+                buttonAnuluj.Enabled = czyWlaczone;
+                buttonZapisz.Enabled = czyWlaczone;
+                textBoxAdres.Enabled = czyWlaczone;
+                textBoxLogin.Enabled = czyWlaczone;
+                textBoxHaslo.Enabled = czyWlaczone;
+            }
+
+            private void buttonEdytuj_Click(object sender, EventArgs e)
+            {
+                zmienStanEdycjiDanych(true);
+            }
+
+            private void buttonAnuluj_Click(object sender, EventArgs e)
+            {
                 zmienStanEdycjiDanych(false);
                 ZaladujDeneZalowowanegoKlienta();
-
-            } catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
             }
 
-        }
+            private void buttonZapisz_Click(object sender, EventArgs e)
+            {
+                try
+                {
+                    int id = zalogowanyKlient.Id;
+                    string imie = textBoxImie.Text;
+                    string nazwisko = textBoxNazwisko.Text;
+                    string adres = textBoxAdres.Text;
+                    string login = textBoxLogin.Text;
+                    string haslo = textBoxHaslo.Text;
+                    zalogowanyKlient = KlientRepository.EdytujKlienta(id, imie, nazwisko, adres, login, haslo);
+                    zmienStanEdycjiDanych(false);
+                    ZaladujDeneZalowowanegoKlienta();
+
+                } catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
     }
-}
+} 
