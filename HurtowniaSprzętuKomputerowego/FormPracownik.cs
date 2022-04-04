@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
+using static HurtowniaSprzętuKomputerowego.model.Sprzedaz;
 
 namespace HurtowniaSprzętuKomputerowego
 {
@@ -20,14 +21,36 @@ namespace HurtowniaSprzętuKomputerowego
         {
             zalogowanyPracownik = pracownik;
             InitializeComponent();
+
             comboBoxProduktyDostawca.DisplayMember = "Nazwa";
             comboBoxProduktyDostawca.ValueMember = "Id";
+            comboBoxSprzedazeStatus.DataSource = Enum.GetValues(typeof(StatusSprzedazy));
+            comboBoxSprzedazeStatus.FormattingEnabled = true;
+            comboBoxSprzedazeStatus.Format += delegate (object sender, ListControlConvertEventArgs e)
+            {
+                string description = "";
+                switch ((StatusSprzedazy)e.Value)
+                {
+                    case StatusSprzedazy.PRZYJETE_DO_REALIZACJI:
+                        description = "Pryjęte do realizacji";
+                        break;
+                    case StatusSprzedazy.W_TRAKCIE:
+                        description = "W trakcie";
+                        break;
+                    case StatusSprzedazy.DO_WYSYLKI:
+                        description = "Do wysyłki";
+                        break;
+                    case StatusSprzedazy.WYSLANE:
+                        description = "Wysłane";
+                        break;
+                }
+                e.Value = description;
+            };
             zaladujDanePracownika();
             zaladujDostawcow();
             zaladujProdukty();
             zaladujKlientow();
             zaladujSprzedaz();
-
 
             #region Dostawcy
             dataGridViewDostawcyListaDostawcow.Columns[0].Name = "id";
@@ -469,6 +492,21 @@ namespace HurtowniaSprzętuKomputerowego
             }
             catch (Exception ex) {}
         }
+
+        private void buttonSprzedazeZmien_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = DataGridViewUtil.pobierzWybranyId(dataGridViewSprzedazeSprzedaze);
+                int status = (int)(StatusSprzedazy)comboBoxSprzedazeStatus.SelectedItem;
+                SprzedazRepository.EdytujSprzedaz(id, status);
+                zaladujSprzedaz();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         #endregion
 
         #region Informacje
@@ -527,7 +565,7 @@ namespace HurtowniaSprzętuKomputerowego
 
         private void FormPracownik_Load(object sender, EventArgs e)
         {
-
+            
         }
 
      

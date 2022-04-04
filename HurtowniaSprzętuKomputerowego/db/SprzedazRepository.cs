@@ -74,5 +74,20 @@ namespace HurtowniaSprzętuKomputerowego.db
                 return dataTable;
             }
         }
+
+        public static void EdytujSprzedaz(int id, int status)
+        {
+            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM " + tabela + " WHERE id=@id;", new List<SqlParameter> { new SqlParameter("@id", id) }))
+            {
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+
+                DataRow dostawca = dataTable.Rows[0];
+                dostawca["status"] = status;
+
+                new SqlCommandBuilder(dataAdapter);
+                dataAdapter.Update(dataTable);
+            }
+        }
     }
 }

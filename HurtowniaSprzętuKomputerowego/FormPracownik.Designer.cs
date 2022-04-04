@@ -91,6 +91,9 @@ namespace HurtowniaSprzętuKomputerowego
             this.buttonInformacjeEdytuj = new System.Windows.Forms.Button();
             this.textBoxInformacjeImie = new System.Windows.Forms.TextBox();
             this.labelInformacjeImie = new System.Windows.Forms.Label();
+            this.buttonSprzedazeZmien = new System.Windows.Forms.Button();
+            this.labelSprzedazeStatus = new System.Windows.Forms.Label();
+            this.comboBoxSprzedazeStatus = new System.Windows.Forms.ComboBox();
             this.tabPageSprzedaze.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerSprzedaze)).BeginInit();
             this.splitContainerSprzedaze.Panel1.SuspendLayout();
@@ -136,6 +139,9 @@ namespace HurtowniaSprzętuKomputerowego
             // tabPageSprzedaze
             // 
             this.tabPageSprzedaze.BackColor = System.Drawing.Color.Gainsboro;
+            this.tabPageSprzedaze.Controls.Add(this.comboBoxSprzedazeStatus);
+            this.tabPageSprzedaze.Controls.Add(this.buttonSprzedazeZmien);
+            this.tabPageSprzedaze.Controls.Add(this.labelSprzedazeStatus);
             this.tabPageSprzedaze.Controls.Add(this.splitContainerSprzedaze);
             this.tabPageSprzedaze.Location = new System.Drawing.Point(4, 34);
             this.tabPageSprzedaze.Name = "tabPageSprzedaze";
@@ -147,8 +153,8 @@ namespace HurtowniaSprzętuKomputerowego
             // splitContainerSprzedaze
             // 
             this.splitContainerSprzedaze.Cursor = System.Windows.Forms.Cursors.VSplit;
-            this.splitContainerSprzedaze.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerSprzedaze.Location = new System.Drawing.Point(3, 3);
+            this.splitContainerSprzedaze.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.splitContainerSprzedaze.Location = new System.Drawing.Point(3, 60);
             this.splitContainerSprzedaze.Name = "splitContainerSprzedaze";
             // 
             // splitContainerSprzedaze.Panel1
@@ -158,8 +164,7 @@ namespace HurtowniaSprzętuKomputerowego
             // splitContainerSprzedaze.Panel2
             // 
             this.splitContainerSprzedaze.Panel2.Controls.Add(this.groupBoxSprzedazeKupioneProdukty);
-           
-            this.splitContainerSprzedaze.Size = new System.Drawing.Size(986, 556);
+            this.splitContainerSprzedaze.Size = new System.Drawing.Size(986, 499);
             this.splitContainerSprzedaze.SplitterDistance = 486;
             this.splitContainerSprzedaze.TabIndex = 4;
             // 
@@ -168,7 +173,7 @@ namespace HurtowniaSprzętuKomputerowego
             this.groupBoxSprzedazeSprzedaze.Controls.Add(this.dataGridViewSprzedazeSprzedaze);
             this.groupBoxSprzedazeSprzedaze.Location = new System.Drawing.Point(18, 15);
             this.groupBoxSprzedazeSprzedaze.Name = "groupBoxSprzedazeSprzedaze";
-            this.groupBoxSprzedazeSprzedaze.Size = new System.Drawing.Size(450, 520);
+            this.groupBoxSprzedazeSprzedaze.Size = new System.Drawing.Size(450, 467);
             this.groupBoxSprzedazeSprzedaze.TabIndex = 5;
             this.groupBoxSprzedazeSprzedaze.TabStop = false;
             this.groupBoxSprzedazeSprzedaze.Text = "Sprzedaże";
@@ -184,7 +189,7 @@ namespace HurtowniaSprzętuKomputerowego
             this.dataGridViewSprzedazeSprzedaze.Name = "dataGridViewSprzedazeSprzedaze";
             this.dataGridViewSprzedazeSprzedaze.RowTemplate.Height = 25;
             this.dataGridViewSprzedazeSprzedaze.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewSprzedazeSprzedaze.Size = new System.Drawing.Size(444, 492);
+            this.dataGridViewSprzedazeSprzedaze.Size = new System.Drawing.Size(444, 439);
             this.dataGridViewSprzedazeSprzedaze.TabIndex = 0;
             this.dataGridViewSprzedazeSprzedaze.SelectionChanged += new System.EventHandler(this.dataGridViewSprzedazeSprzedaze_SelectionChanged);
             // 
@@ -193,7 +198,7 @@ namespace HurtowniaSprzętuKomputerowego
             this.groupBoxSprzedazeKupioneProdukty.Controls.Add(this.dataGridViewSprzedazeKupioneProdukty);
             this.groupBoxSprzedazeKupioneProdukty.Location = new System.Drawing.Point(25, 15);
             this.groupBoxSprzedazeKupioneProdukty.Name = "groupBoxSprzedazeKupioneProdukty";
-            this.groupBoxSprzedazeKupioneProdukty.Size = new System.Drawing.Size(452, 520);
+            this.groupBoxSprzedazeKupioneProdukty.Size = new System.Drawing.Size(450, 467);
             this.groupBoxSprzedazeKupioneProdukty.TabIndex = 0;
             this.groupBoxSprzedazeKupioneProdukty.TabStop = false;
             this.groupBoxSprzedazeKupioneProdukty.Text = "Kupione produkty";
@@ -209,7 +214,7 @@ namespace HurtowniaSprzętuKomputerowego
             this.dataGridViewSprzedazeKupioneProdukty.Name = "dataGridViewSprzedazeKupioneProdukty";
             this.dataGridViewSprzedazeKupioneProdukty.RowTemplate.Height = 25;
             this.dataGridViewSprzedazeKupioneProdukty.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewSprzedazeKupioneProdukty.Size = new System.Drawing.Size(446, 492);
+            this.dataGridViewSprzedazeKupioneProdukty.Size = new System.Drawing.Size(444, 439);
             this.dataGridViewSprzedazeKupioneProdukty.TabIndex = 1;
             // 
             // tabPageKlient
@@ -838,6 +843,33 @@ namespace HurtowniaSprzętuKomputerowego
             this.labelInformacjeImie.TabIndex = 1;
             this.labelInformacjeImie.Text = "Imię:";
             // 
+            // buttonSprzedazeZmien
+            // 
+            this.buttonSprzedazeZmien.Location = new System.Drawing.Point(393, 8);
+            this.buttonSprzedazeZmien.Name = "buttonSprzedazeZmien";
+            this.buttonSprzedazeZmien.Size = new System.Drawing.Size(80, 40);
+            this.buttonSprzedazeZmien.TabIndex = 13;
+            this.buttonSprzedazeZmien.Text = "Zmień";
+            this.buttonSprzedazeZmien.UseVisualStyleBackColor = true;
+            this.buttonSprzedazeZmien.Click += new System.EventHandler(this.buttonSprzedazeZmien_Click);
+            // 
+            // labelSprzedazeStatus
+            // 
+            this.labelSprzedazeStatus.AutoSize = true;
+            this.labelSprzedazeStatus.Location = new System.Drawing.Point(27, 19);
+            this.labelSprzedazeStatus.Name = "labelSprzedazeStatus";
+            this.labelSprzedazeStatus.Size = new System.Drawing.Size(55, 21);
+            this.labelSprzedazeStatus.TabIndex = 11;
+            this.labelSprzedazeStatus.Text = "Status:";
+            // 
+            // comboBoxSprzedazeStatus
+            // 
+            this.comboBoxSprzedazeStatus.FormattingEnabled = true;
+            this.comboBoxSprzedazeStatus.Location = new System.Drawing.Point(88, 15);
+            this.comboBoxSprzedazeStatus.Name = "comboBoxSprzedazeStatus";
+            this.comboBoxSprzedazeStatus.Size = new System.Drawing.Size(299, 29);
+            this.comboBoxSprzedazeStatus.TabIndex = 14;
+            // 
             // FormPracownik
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -849,6 +881,7 @@ namespace HurtowniaSprzętuKomputerowego
             this.Text = "Pracownik";
             this.Load += new System.EventHandler(this.FormPracownik_Load);
             this.tabPageSprzedaze.ResumeLayout(false);
+            this.tabPageSprzedaze.PerformLayout();
             this.splitContainerSprzedaze.Panel1.ResumeLayout(false);
             this.splitContainerSprzedaze.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerSprzedaze)).EndInit();
@@ -960,5 +993,8 @@ namespace HurtowniaSprzętuKomputerowego
         private System.Windows.Forms.TextBox textBoxKlienciFiltr;
         private System.Windows.Forms.Label labelKlienciFiltry;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBoxSprzedazeStatus;
+        private System.Windows.Forms.Button buttonSprzedazeZmien;
+        private System.Windows.Forms.Label labelSprzedazeStatus;
     }
 }
