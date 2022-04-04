@@ -106,6 +106,14 @@ namespace HurtowniaSprzętuKomputerowego
             #endregion
 
             #region Sprzedaż
+
+            DataTable data = SprzedazRepository.PobierzSprzedaze(zalogowanyPracownik.Id);
+            EnumsTranformers.TransformSprzedazDataTable(data);
+            dataGridViewSprzedazeSprzedaze.DataSource = data;
+
+            dataGridViewSprzedazeKupioneProdukty.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dataGridViewSprzedazeSprzedaze.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+
             dataGridViewSprzedazeSprzedaze.Columns[0].Name = "id";
             dataGridViewSprzedazeSprzedaze.Columns[0].DataPropertyName = "id";
             dataGridViewSprzedazeSprzedaze.Columns[0].HeaderText = "Id";
@@ -119,7 +127,7 @@ namespace HurtowniaSprzętuKomputerowego
             dataGridViewSprzedazeSprzedaze.Columns[2].Name = "status";
             dataGridViewSprzedazeSprzedaze.Columns[2].DataPropertyName = "status";
             dataGridViewSprzedazeSprzedaze.Columns[2].HeaderText = "Status";
-            dataGridViewSprzedazeSprzedaze.Columns[2].Visible = true;
+            dataGridViewSprzedazeSprzedaze.Columns[2].Visible = false;
 
             dataGridViewSprzedazeSprzedaze.Columns[3].Name = "suma";
             dataGridViewSprzedazeSprzedaze.Columns[3].DataPropertyName = "suma";
@@ -459,7 +467,7 @@ namespace HurtowniaSprzętuKomputerowego
                 dataGridViewSprzedazeKupioneProdukty.Columns[9].HeaderText = "Cena";
                 dataGridViewSprzedazeKupioneProdukty.Columns[9].Visible = false;
             }
-            catch (Exception ex) { }
+            catch (Exception ex) {}
         }
         #endregion
 
@@ -521,5 +529,7 @@ namespace HurtowniaSprzętuKomputerowego
         {
 
         }
+
+     
     }
 }

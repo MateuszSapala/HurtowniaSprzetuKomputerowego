@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 using System.Windows.Forms;
 
@@ -42,5 +43,7 @@ namespace HurtowniaSprzętuKomputerowego.common
             }
             return Convert.ToInt32(data.SelectedRows[0].Cells[nazwaKolumny].Value);
         }
+      
+
     }
 }

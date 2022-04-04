@@ -9,7 +9,7 @@ namespace HurtowniaSprzętuKomputerowego.common
     {
 
         //Do odpalenia lokalnego potrzebne jest podstawienie odpowiedniego Data Source
-        private const string conString = "Data Source=LAPTOP-MPO21D8E\\SQLEXPRESS;Initial Catalog=Hurtownia;Integrated Security=True";
+        private const string conString = "Data Source=DESKTOP-ALQ9BUE;Initial Catalog=Hurtownia;Integrated Security=True";
 
         public static SqlConnection getConnection()
         {
