@@ -227,7 +227,9 @@ namespace HurtowniaSprzętuKomputerowego
         {
             try
             {
-                dataGridViewSprzedazeSprzedaze.DataSource = SprzedazRepository.PobierzSprzedaze();
+                DataTable data = SprzedazRepository.PobierzSprzedaze(zalogowanyPracownik.Id);
+                EnumsTranformers.TransformSprzedazDataTable(data);
+                dataGridViewSprzedazeSprzedaze.DataSource = data;
             }
             catch (Exception ex)
             {
