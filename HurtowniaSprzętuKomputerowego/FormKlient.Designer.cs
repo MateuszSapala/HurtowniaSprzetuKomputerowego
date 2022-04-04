@@ -32,7 +32,7 @@ namespace HurtowniaSprzętuKomputerowego
             this.tabPageHistoria = new System.Windows.Forms.TabPage();
             this.splitContainerSprzedaze = new System.Windows.Forms.SplitContainer();
             this.groupBoxSprzedazeSprzedaze = new System.Windows.Forms.GroupBox();
-            this.dataGridViewHistoria = new System.Windows.Forms.DataGridView();
+            this.dataGridViewHistoriaSprzedazy = new System.Windows.Forms.DataGridView();
             this.groupBoxSprzedazeKupioneProdukty = new System.Windows.Forms.GroupBox();
             this.dataGridViewSprzedazeKupioneProdukty = new System.Windows.Forms.DataGridView();
             this.tabPageKoszyk = new System.Windows.Forms.TabPage();
@@ -77,7 +77,7 @@ namespace HurtowniaSprzętuKomputerowego
             this.splitContainerSprzedaze.Panel2.SuspendLayout();
             this.splitContainerSprzedaze.SuspendLayout();
             this.groupBoxSprzedazeSprzedaze.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistoria)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistoriaSprzedazy)).BeginInit();
             this.groupBoxSprzedazeKupioneProdukty.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSprzedazeKupioneProdukty)).BeginInit();
             this.tabPageKoszyk.SuspendLayout();
@@ -124,7 +124,7 @@ namespace HurtowniaSprzętuKomputerowego
             // 
             // groupBoxSprzedazeSprzedaze
             // 
-            this.groupBoxSprzedazeSprzedaze.Controls.Add(this.dataGridViewHistoria);
+            this.groupBoxSprzedazeSprzedaze.Controls.Add(this.dataGridViewHistoriaSprzedazy);
             this.groupBoxSprzedazeSprzedaze.Location = new System.Drawing.Point(18, 15);
             this.groupBoxSprzedazeSprzedaze.Name = "groupBoxSprzedazeSprzedaze";
             this.groupBoxSprzedazeSprzedaze.Size = new System.Drawing.Size(450, 520);
@@ -132,19 +132,20 @@ namespace HurtowniaSprzętuKomputerowego
             this.groupBoxSprzedazeSprzedaze.TabStop = false;
             this.groupBoxSprzedazeSprzedaze.Text = "Sprzedaże";
             // 
-            // dataGridViewHistoria
+            // dataGridViewHistoriaSprzedazy
             // 
-            this.dataGridViewHistoria.AllowUserToAddRows = false;
-            this.dataGridViewHistoria.AllowUserToDeleteRows = false;
-            this.dataGridViewHistoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewHistoria.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewHistoria.Location = new System.Drawing.Point(3, 25);
-            this.dataGridViewHistoria.MultiSelect = false;
-            this.dataGridViewHistoria.Name = "dataGridViewHistoria";
-            this.dataGridViewHistoria.RowTemplate.Height = 25;
-            this.dataGridViewHistoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewHistoria.Size = new System.Drawing.Size(444, 492);
-            this.dataGridViewHistoria.TabIndex = 0;
+            this.dataGridViewHistoriaSprzedazy.AllowUserToAddRows = false;
+            this.dataGridViewHistoriaSprzedazy.AllowUserToDeleteRows = false;
+            this.dataGridViewHistoriaSprzedazy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewHistoriaSprzedazy.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewHistoriaSprzedazy.Location = new System.Drawing.Point(3, 25);
+            this.dataGridViewHistoriaSprzedazy.MultiSelect = false;
+            this.dataGridViewHistoriaSprzedazy.Name = "dataGridViewHistoriaSprzedazy";
+            this.dataGridViewHistoriaSprzedazy.RowTemplate.Height = 25;
+            this.dataGridViewHistoriaSprzedazy.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewHistoriaSprzedazy.Size = new System.Drawing.Size(444, 492);
+            this.dataGridViewHistoriaSprzedazy.TabIndex = 0;
+            this.dataGridViewHistoriaSprzedazy.SelectionChanged += new System.EventHandler(this.dataGridViewHistoriaSprzedazy_SelectionChanged);
             // 
             // groupBoxSprzedazeKupioneProdukty
             // 
@@ -584,7 +585,7 @@ namespace HurtowniaSprzętuKomputerowego
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerSprzedaze)).EndInit();
             this.splitContainerSprzedaze.ResumeLayout(false);
             this.groupBoxSprzedazeSprzedaze.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistoria)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistoriaSprzedazy)).EndInit();
             this.groupBoxSprzedazeKupioneProdukty.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSprzedazeKupioneProdukty)).EndInit();
             this.tabPageKoszyk.ResumeLayout(false);
@@ -610,7 +611,7 @@ namespace HurtowniaSprzętuKomputerowego
         private System.Windows.Forms.TabPage tabPageHistoria;
         private System.Windows.Forms.SplitContainer splitContainerSprzedaze;
         private System.Windows.Forms.GroupBox groupBoxSprzedazeSprzedaze;
-        private System.Windows.Forms.DataGridView dataGridViewHistoria;
+        private System.Windows.Forms.DataGridView dataGridViewHistoriaSprzedazy;
         private System.Windows.Forms.GroupBox groupBoxSprzedazeKupioneProdukty;
         private System.Windows.Forms.DataGridView dataGridViewSprzedazeKupioneProdukty;
         private System.Windows.Forms.TabPage tabPageKoszyk;

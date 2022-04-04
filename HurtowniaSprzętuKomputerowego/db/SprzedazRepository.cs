@@ -14,7 +14,7 @@ namespace HurtowniaSprzętuKomputerowego.db
 
         public static DataTable PobierzSprzedaze()
         {
-            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM "+tabela))
+            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM " + tabela))
             {
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
