@@ -14,41 +14,33 @@ namespace HurtowniaSprzętuKomputerowego.db
 
         public static void DodajKlienta(string imie, string nazwisko, string adres, string login, string haslo)
         {
-            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM " + tabela + " WHERE 0=1;"))
+            using (SqlConnection connection = DbConnection.getConnection())
             {
-                DataTable dataTable = new DataTable();
-                dataAdapter.Fill(dataTable);
-
-                DataRow klient = dataTable.NewRow();
-                klient["imie"] = imie;
-                klient["nazwisko"] = nazwisko;
-                klient["adres"] = adres;
-                klient["login"] = login;
-                klient["haslo"] = haslo;
-
-                dataTable.Rows.Add(klient);
-
-                new SqlCommandBuilder(dataAdapter);
-                dataAdapter.Update(dataTable);
+                connection.Open();
+                SqlCommand command = new SqlCommand("INSERT INTO " + tabela + " (imie, nazwisko, adres, login, haslo) VALUES (@imie, @nazwisko, @adres, @login, HASHBYTES('SHA2_512', '" + haslo + "')", connection);
+                command.Parameters.Add(new SqlParameter("@imie", imie));
+                command.Parameters.Add(new SqlParameter("@nazwisko", nazwisko));
+                command.Parameters.Add(new SqlParameter("@adres", adres));
+                command.Parameters.Add(new SqlParameter("@login", login));
+                command.ExecuteNonQuery();
+                connection.Close();
             }
         }
 
-        public static void EdytujKlienta(int id, string imie, string nazwisko, string adres, string login, string haslo)
+        public static Klient EdytujKlienta(int id, string imie, string nazwisko, string adres, string login, string haslo)
         {
-            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM " + tabela + " WHERE id=@id;", new List<SqlParameter> { new SqlParameter("@id", id) }))
+            using (SqlConnection connection = DbConnection.getConnection())
             {
-                DataTable dataTable = new DataTable();
-                dataAdapter.Fill(dataTable);
-
-                DataRow klient = dataTable.Rows[0];
-                klient["imie"] = imie;
-                klient["nazwisko"] = nazwisko;
-                klient["adres"] = adres;
-                klient["login"] = login;
-                klient["haslo"] = haslo;
-
-                new SqlCommandBuilder(dataAdapter);
-                dataAdapter.Update(dataTable);
+                connection.Open();
+                SqlCommand command = new SqlCommand("UPDATE " + tabela + " SET imie=@imie, nazwisko=@nazwisko, adres=@adres, login=@login, haslo=HASHBYTES('SHA2_512', '" + haslo + "') WHERE id=@id", connection);
+                command.Parameters.Add(new SqlParameter("@id", id));
+                command.Parameters.Add(new SqlParameter("@imie", imie));
+                command.Parameters.Add(new SqlParameter("@nazwisko", nazwisko));
+                command.Parameters.Add(new SqlParameter("@adres", adres));
+                command.Parameters.Add(new SqlParameter("@login", login));
+                command.ExecuteNonQuery();
+                connection.Close();
+                return new Klient(id, imie, nazwisko, adres, login, "");
             }
         }
 
