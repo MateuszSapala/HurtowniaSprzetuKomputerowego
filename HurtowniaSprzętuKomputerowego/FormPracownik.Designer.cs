@@ -158,6 +158,7 @@ namespace HurtowniaSprzętuKomputerowego
             // splitContainerSprzedaze.Panel2
             // 
             this.splitContainerSprzedaze.Panel2.Controls.Add(this.groupBoxSprzedazeKupioneProdukty);
+           
             this.splitContainerSprzedaze.Size = new System.Drawing.Size(986, 556);
             this.splitContainerSprzedaze.SplitterDistance = 486;
             this.splitContainerSprzedaze.TabIndex = 4;
