@@ -90,10 +90,18 @@ INSERT INTO Hurtownia.dbo.produkt(dostawca_id, nazwa_sprzetu, informacje_dodatko
 (4, 'Komputer 3', '', 5999);
 
 INSERT INTO Hurtownia.dbo.sprzedaz (id, klient_id, status, suma, data_sprzedazy) VALUES
-(1, 1, 3, 7057, GETDATE()),
-(2, 2, 2, 4499, GETDATE()),
-(3, 3, 1, 49999, GETDATE()),
-(4, 1, 0, 712, GETDATE());
+(1, 1, 3, 6788, GETDATE()),
+(2, 2, 2, 912, GETDATE()),
+(3, 3, 1, 123, GETDATE()),
+(4, 1, 0, 6255, GETDATE());
+
+INSERT INTO Hurtownia.dbo.pozycja_sprzedazy(sprzedaz_id, produkt_id, zamowiona_ilosc, wartosc) VALUES 
+(1,3,1,789),
+(1,12,1,5999),
+(2,1,2,912),
+(3,4,1,123),
+(4,6,1,256),
+(4,9,1,5999);
 
 --Pobieranie danych
 --SELECT * FROM Hurtownia.dbo.pozycja_sprzedazy;
