@@ -130,7 +130,7 @@ namespace HurtowniaSprzętuKomputerowego
 
             #region Sprzedaż
 
-            DataTable data = SprzedazRepository.PobierzSprzedaze(zalogowanyPracownik.Id);
+            DataTable data = SprzedazRepository.PobierzSprzedaze();
             EnumsTranformers.TransformSprzedazDataTable(data);
             dataGridViewSprzedazeSprzedaze.DataSource = data;
 
@@ -404,7 +404,10 @@ namespace HurtowniaSprzętuKomputerowego
         {
             try
             {
-                dataGridViewKlienciKupnaKlienta.DataSource = SprzedazRepository.PobierzSprzedaze(DataGridViewUtil.pobierzWybranyId(dataGridViewKlienciListaKlientow));
+                DataTable data = SprzedazRepository.PobierzSprzedaze(DataGridViewUtil.pobierzWybranyId(dataGridViewKlienciListaKlientow));
+                EnumsTranformers.TransformSprzedazDataTable(data);
+                dataGridViewKlienciKupnaKlienta.DataSource = data;
+                
 
                 dataGridViewKlienciKupnaKlienta.Columns[0].Name = "id";
                 dataGridViewKlienciKupnaKlienta.Columns[0].DataPropertyName = "id";
@@ -419,7 +422,7 @@ namespace HurtowniaSprzętuKomputerowego
                 dataGridViewKlienciKupnaKlienta.Columns[2].Name = "status";
                 dataGridViewKlienciKupnaKlienta.Columns[2].DataPropertyName = "status";
                 dataGridViewKlienciKupnaKlienta.Columns[2].HeaderText = "Status";
-                dataGridViewKlienciKupnaKlienta.Columns[2].Visible = true;
+                dataGridViewKlienciKupnaKlienta.Columns[2].Visible = false;
 
                 dataGridViewKlienciKupnaKlienta.Columns[3].Name = "suma";
                 dataGridViewKlienciKupnaKlienta.Columns[3].DataPropertyName = "suma";
