@@ -60,16 +60,40 @@ CREATE TABLE Hurtownia.dbo.pracownik(
 );
 
 --Dodanie przyk≥adowych danych
-INSERT INTO Hurtownia.dbo.pracownik (imie, nazwisko, adres, login, haslo) VALUES ('Mateusz', 'Sapa≥a', 'Adres', 'admin', HashBytes('SHA2_512', 'pass'));
-INSERT INTO Hurtownia.dbo.klient (imie, nazwisko, adres, login, haslo) VALUES ('Jan', 'Nowak', 'Adres', 'user', HashBytes('SHA2_512', 'pass'));
-INSERT INTO Hurtownia.dbo.klient (imie, nazwisko, adres, login, haslo) VALUES ('Adam', 'Nowak', 'Adres2', 'user2', HashBytes('SHA2_512', 'pass'));
-INSERT INTO Hurtownia.dbo.klient (imie, nazwisko, adres, login, haslo) VALUES ('Tomasz', 'Kowalski', 'Adres3', 'user3', HashBytes('SHA2_512', 'pass'));
+INSERT INTO Hurtownia.dbo.pracownik (imie, nazwisko, adres, login, haslo) 
+VALUES ('Mateusz', 'Sapa≥a', '£Ûdü ul. Zmyúlona 1', 'admin', HashBytes('SHA2_512', 'pass')),
+('Szymon', 'Szafoni', '£Ûdü ul. Zmyúlona 2', 'admin2', HashBytes('SHA2_512', 'pass'));
 
-SELECT HashBytes('SHA2_512', 'pass') AS pass;
-SELECT TYPE_NAME(HashBytes('SHA2_512', 'pass')) AS pass;
+INSERT INTO Hurtownia.dbo.klient (imie, nazwisko, adres, login, haslo) 
+VALUES ('Jan', 'Nowak', '£Ûdü ul. Zmyúlona 3', 'user', HashBytes('SHA2_512', 'pass')),
+('Adam', 'Nowak', '£Ûdü ul. Zmyúlona 4', 'user2', HashBytes('SHA2_512', 'pass')),
+('Tomasz', 'Kowalski', '£Ûdü ul. Zmyúlona 5', 'user3', HashBytes('SHA2_512', 'pass'));
 
-INSERT INTO Hurtownia.dbo.sprzedaz (id,klient_id, status, suma, data_sprzedazy) VALUES (1,1, 1, 2, GETDATE());
-INSERT INTO Hurtownia.dbo.pozycja_sprzedazy (sprzedaz_id, produkt_id, zamowiona_ilosc, wartosc) VALUES (1, 8, 2, 200);
+INSERT INTO Hurtownia.dbo.dostawca (nazwa, informacje_dodatkowe) VALUES 
+('Firma 1', 'Dostawca monitorÛw'),
+('Firma 2', 'Dostawca klawiatur'),
+('Firma 3', 'Dostawca laptopÛw'),
+('Firma 4', 'Dostawca komputerÛw');
+
+INSERT INTO Hurtownia.dbo.produkt(dostawca_id, nazwa_sprzetu, informacje_dodatkowe, cena_jednostkowa) VALUES
+(1, 'Monitor 1', '18 cali', 456),
+(1, 'Monitor 2', '20 cali', 678),
+(1, 'Monitor 3', '24 cali', 789),
+(2, 'Klawiatura 1', '', 123),
+(2, 'Klawiatura 2', '', 146),
+(2, 'Klawiatura 3', 'Klawiatura podúwietlana', 256),
+(3, 'Laptop 1', '', 4499),
+(3, 'Laptop 2', '', 4999),
+(3, 'Laptop 3', '', 5999),
+(4, 'Komputer 1', '', 4499),
+(4, 'Komputer 2', '', 4999),
+(4, 'Komputer 3', '', 5999);
+
+INSERT INTO Hurtownia.dbo.sprzedaz (id, klient_id, status, suma, data_sprzedazy) VALUES
+(1, 1, 3, 7057, GETDATE()),
+(2, 2, 2, 4499, GETDATE()),
+(3, 3, 1, 49999, GETDATE()),
+(4, 1, 0, 712, GETDATE());
 
 --Pobieranie danych
 --SELECT * FROM Hurtownia.dbo.pozycja_sprzedazy;
@@ -79,14 +103,3 @@ INSERT INTO Hurtownia.dbo.pozycja_sprzedazy (sprzedaz_id, produkt_id, zamowiona_
 --SELECT * FROM Hurtownia.dbo.dostawca;
 --SELECT * FROM Hurtownia.dbo.pracownik;
 --SELECT p.id, d.nazwa, p.nazwa_sprzetu, p.informacje_dodatkowe, p.cena_jednostkowa, d.id AS dostawca_id FROM Hurtownia.dbo.produkt AS p, Hurtownia.dbo.dostawca AS d WHERE p.dostawca_id=d.id;
-SELECT * FROM Hurtownia.dbo.klient AS k WHERE LOWER('jan') LIKE LOWER(k.imie)+'|'+LOWER(k.nazwisko)+'|'+LOWER(k.adres)+'|'+LOWER(k.login);
-
-SELECT * FROM Hurtownia.dbo.klient AS k WHERE LOWER('jan') LIKE '%'+LOWER(k.imie)+'%|%'+LOWER(k.nazwisko)+'%|%'+LOWER(k.adres)+'%|%'+LOWER(k.login)+'%';
-SELECT * FROM Hurtownia.dbo.klient AS k WHERE LOWER('jan') LIKE '%'+LOWER(k.imie)+'%|dsad';
-
-SELECT * FROM Hurtownia.dbo.klient AS k WHERE (LOWER(k.imie)=LOWER('') OR LOWER(k.nazwisko)=LOWER('') OR LOWER(k.adres)=LOWER('') OR LOWER(k.login)=LOWER(''));
-
-SELECT * FROM Hurtownia.dbo.sprzedaz AS s, Hurtownia.dbo.klient AS k WHERE s.klient_id=k.id;
-
-
-SELECT * FROM Hurtownia.dbo.pracownik WHERE login='admin' AND haslo=HashBytes('SHA2_512', 'pass');

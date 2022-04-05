@@ -173,6 +173,7 @@ namespace HurtowniaSprzętuKomputerowego
             // 
             // tabPageKoszyk
             // 
+            this.tabPageKoszyk.BackColor = System.Drawing.Color.Gainsboro;
             this.tabPageKoszyk.Controls.Add(this.panel2);
             this.tabPageKoszyk.Controls.Add(this.groupBox2);
             this.tabPageKoszyk.Location = new System.Drawing.Point(4, 30);
@@ -181,7 +182,6 @@ namespace HurtowniaSprzętuKomputerowego
             this.tabPageKoszyk.Size = new System.Drawing.Size(992, 566);
             this.tabPageKoszyk.TabIndex = 1;
             this.tabPageKoszyk.Text = "Koszyk";
-            this.tabPageKoszyk.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -318,6 +318,7 @@ namespace HurtowniaSprzętuKomputerowego
             // 
             // tabPageProdukty
             // 
+            this.tabPageProdukty.BackColor = System.Drawing.Color.Gainsboro;
             this.tabPageProdukty.Controls.Add(this.panel1);
             this.tabPageProdukty.Controls.Add(this.groupBox1);
             this.tabPageProdukty.Location = new System.Drawing.Point(4, 30);
@@ -326,7 +327,6 @@ namespace HurtowniaSprzętuKomputerowego
             this.tabPageProdukty.Size = new System.Drawing.Size(992, 566);
             this.tabPageProdukty.TabIndex = 0;
             this.tabPageProdukty.Text = "Produkty";
-            this.tabPageProdukty.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -574,6 +574,7 @@ namespace HurtowniaSprzętuKomputerowego
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1000, 600);
             this.Controls.Add(this.tabControlKlient);
             this.Name = "FormKlient";
