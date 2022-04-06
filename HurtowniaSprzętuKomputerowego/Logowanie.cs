@@ -21,34 +21,42 @@ namespace HurtowniaSprzętuKomputerowego
             string login = textBoxLogin.Text;
             string haslo = textBoxHaslo.Text;
 
-            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM Hurtownia.dbo.pracownik WHERE login='" + login + "' AND haslo=HashBytes('SHA2_512', '" + haslo + "');"))
+            try
             {
-                DataTable dataTable = new DataTable();
-                dataAdapter.Fill(dataTable);
-                foreach (DataRow row in dataTable.Rows)
+                using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM Hurtownia.dbo.pracownik WHERE login='" + login + "' AND haslo=HashBytes('SHA2_512', '" + haslo + "');"))
                 {
-                    Pracownik pracownik = new Pracownik(row.Field<int>("id"), row.Field<string>("imie"), row.Field<string>("nazwisko"), row.Field<string>("adres"), row.Field<string>("login"), "");
-                    FormPracownik formPracownik = new FormPracownik(pracownik);
-                    formPracownik.FormClosed += (s, args) => Close();
-                    formPracownik.Show();
-                    Hide();
-                    return;
+                    DataTable dataTable = new DataTable();
+                    dataAdapter.Fill(dataTable);
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        Pracownik pracownik = new Pracownik(row.Field<int>("id"), row.Field<string>("imie"), row.Field<string>("nazwisko"), row.Field<string>("adres"), row.Field<string>("login"), "");
+                        FormPracownik formPracownik = new FormPracownik(pracownik);
+                        formPracownik.FormClosed += (s, args) => Close();
+                        formPracownik.Show();
+                        Hide();
+                        return;
+                    }
+                }
+
+                using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM Hurtownia.dbo.klient WHERE login='" + login + "' AND haslo=HashBytes('SHA2_512', '" + haslo + "');"))
+                {
+                    DataTable dataTable = new DataTable();
+                    dataAdapter.Fill(dataTable);
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        Klient klient = new Klient(row.Field<int>("id"), row.Field<string>("imie"), row.Field<string>("nazwisko"), row.Field<string>("adres"), row.Field<string>("login"), "");
+                        FormKlient formKlient = new FormKlient(klient);
+                        formKlient.FormClosed += (s, args) => Close();
+                        formKlient.Show();
+                        Hide();
+                        return;
+                    }
                 }
             }
-
-            using (SqlDataAdapter dataAdapter = DbConnection.getDataAdapter("SELECT * FROM Hurtownia.dbo.klient WHERE login='" + login + "' AND haslo=HashBytes('SHA2_512', '" + haslo + "');"))
+            catch (Exception ex)
             {
-                DataTable dataTable = new DataTable();
-                dataAdapter.Fill(dataTable);
-                foreach (DataRow row in dataTable.Rows)
-                {
-                    Klient klient = new Klient(row.Field<int>("id"), row.Field<string>("imie"), row.Field<string>("nazwisko"), row.Field<string>("adres"), row.Field<string>("login"), "");
-                    FormKlient formKlient = new FormKlient(klient);
-                    formKlient.FormClosed += (s, args) => Close();
-                    formKlient.Show();
-                    Hide();
-                    return;
-                }
+                MessageBox.Show("Nie udało się połączyć z bazą");
+                return;
             }
 
             MessageBox.Show("Niepoprawne dane logowania");
