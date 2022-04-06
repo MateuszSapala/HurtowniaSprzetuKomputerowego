@@ -39,5 +39,5 @@ namespace HurtowniaSprzętuKomputerowego.model
                     return "Brak";
             }
         }
-    }
+     }
 }

@@ -271,6 +271,7 @@ namespace HurtowniaSprzętuKomputerowego
                 SprzedazRepository.DodajSprzedaz(sprzedaz.Id, sprzedaz.KlientId, (int)sprzedaz.Status, sprzedaz.Suma, sprzedaz.DataSprzedazy);
                 PozycjaSprzedazyRepository.DodajPozycje(pozycjeSprzedazy);
                 MessageBox.Show("Pomyslnie wysłano twoje zamówienie");
+                ZaladujSprzedazeKlienta();
                 listBoxKoszyk.Items.Clear();
                 UzupełnijDGVProdukty();
             }
