@@ -32,7 +32,7 @@ namespace HurtowniaSprzętuKomputerowego
                 switch ((StatusSprzedazy)e.Value)
                 {
                     case StatusSprzedazy.PRZYJETE_DO_REALIZACJI:
-                        description = "Pryjęte do realizacji";
+                        description = "Przyjęte do realizacji";
                         break;
                     case StatusSprzedazy.W_TRAKCIE:
                         description = "W trakcie";

@@ -58,7 +58,7 @@ namespace HurtowniaSprzętuKomputerowego.db
         {
             string[] filtry = filtr.Split(' ');
             List<SqlParameter> parametry = new List<SqlParameter>();
-            string sql = "SELECT * FROM " + tabela + " AS k WHERE ";
+            string sql = "SELECT id, imie, nazwisko, adres, login FROM " + tabela + " AS k WHERE ";
             for (int i = 0; i < filtry.Length; i++)
             {
                 string p = "@p" + i;
